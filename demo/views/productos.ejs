@@ -7,6 +7,14 @@
     <title>productos</title>
 </head>
 <body>
-    
+    <h1>Productos en lista</h1>
+    <ul>
+        <ul><% for (let i=0; i< productos.length; i++)  {%>
+            <ul><%= productos[i].nombre%></ul>
+            <ul><%= productos[i].marca%></ul>
+            <ul><%= productos[i].modelo%></ul>
+            <ul><%= productos[i].descripcion%></ul>
+            <% } %>
+    </ul>   
 </body>
 </html>
