@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter=require(`./routes/productos`); //obtiene la indo de products.js
 var comentRouter=require(`./routes/comentarios`);//obtiene la indo de comentarios.js
+var usuarioRouter=require(`./routes/usuario`); //obtiene la info de usuario.js
 var app = express();
 
 
@@ -27,6 +28,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(`/productos`, productsRouter); //lo conecto con producstouter
 app.use(`/comentarios`,comentRouter);//lo conecto con comentrouter
+app.use(`/usuario`,usuarioRouter);//lo conecto a usuariorouter
 
 
 

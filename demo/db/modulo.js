@@ -15,6 +15,7 @@ const data = {
             marca:"adidas",
             modelo:"Gk9950 A",
             descripcion:"Sin importar cómo lo usés, la tecnología AEROREADY se encarga de mantener tu cuerpo seco y cómodo de la mañana a la noche.",
+        
         },{
             id: "2",
             nombre:"Remera De Entrenamiento Train Essentials  ",
