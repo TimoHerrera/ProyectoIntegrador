@@ -17,13 +17,14 @@
         <!-- Header -->
         <header class="main-header">
             <div class="container">
+                <% for (let j=0; j<1; j++)  {%>
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
                         <a href="index.ejs" class="main-header_home-link">
-                            <img src="./images/logo-mercado-liebre.svg">
+                            <img src="<%= productos[j].header %>" alt="header imagen">
                         </a>
                     </div>
-        
+                    <% } %>
                     <div class="col-7 col-md-6">
                         <form action="comentarios.ejs" method="GET" class="search-form">
                             <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
@@ -77,11 +78,13 @@
         <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
                 <a href="product.html">
+                    
                     <figure class="product-box_image">
-                        <!-- falta lo de la foto que se tiene que sacar tamb de la base de datos -->
-                        <img src="../public/images/products/img-cafetera-moulinex.jpg" alt="cafetera moulinex">
+                        <img src=<%= productos[i].imagen %> alt="productimage">
+                        <!-- falta lo de la foto que se tiene que sacar tamb de la base de datos --> 
+                    </figure>      
                 </a>
-                    </figure>
+                    
                     <article class="product-box_data">
                         
                         <h2><%= productos[i].nombre%></h2>
