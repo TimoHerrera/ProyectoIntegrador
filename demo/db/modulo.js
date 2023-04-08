@@ -4,7 +4,7 @@ const data = {
             nombre: "paula",
             nombreDeUsuario: "paula123",
             mail: "paula.rodriguez@gmail.com",
-            FotoDePerfil: "../imagenes/descarga.jpg",
+            FotoDePerfil: "../imagenes/paula.jpeg",
             id:"0",
         }],
 
@@ -15,6 +15,7 @@ const data = {
             marca:"adidas",
             modelo:"Gk9950 A",
             descripcion:"Sin importar cómo lo usés, la tecnología AEROREADY se encarga de mantener tu cuerpo seco y cómodo de la mañana a la noche.",
+            imagen: "../imagenes/conjunto3tiras.webp",
         
         },{
             id: "2",
@@ -22,18 +23,21 @@ const data = {
             marca:"adidas",
             modelo:"Ic7430",
             descripcion:"La tecnología AEROREADY se encarga del sudor para que sientas comodidad en todo momento. Su diseño te ofrece una total libertad de movimiento, así que animate y levantá esas pesas.",
+            imagen: "../imagenes/remeraEntrenamientoEssentials.webp",
         },{
             id: "3",
             nombre:"Remera Run It ",
             marca:"adidas",
             modelo:"Hb7473",
             descripcion:"El tejido ligero y transpirable te brinda soporte desde el primer al último paso y la tecnología AEROREADY absorbe el sudor para mantener tu piel fresca y seca en todo momento.",
+            imagen: "../imagenes/remeraRunIt.webp",
         },{
             id: "4",
             nombre:"Buzo Con Capucha Essentials Logo Lineal Felpa",
             marca:"adidas",
             modelo:"Ic9367",
             descripcion:"Este buzo con capucha adidas recompensa tu esfuerzo y el dolor muscular para que puedas rendir al máximo. Porque este buzo hace más fácil tu vida, y eso es lo que te merecés.",
+            imagen: "../imagenes/buzoCapuchaEssentials.webp",
         },{
             id: "5",
             nombre:"Gorra Béisbol 3 Tiras Sarga (unisex)",
