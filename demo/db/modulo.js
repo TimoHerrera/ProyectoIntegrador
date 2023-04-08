@@ -20,7 +20,6 @@ const data = {
             header:"../imagenes/Dassler.jpg",
             
             id: "1",
-            imagen: "../imagenes/pruebacss.jpg",
             nombre:"Conjunto 3 Tiras Aeroready Essentials Corte Clásico",
             marca:"adidas",
             modelo:"Gk9950 A",
@@ -29,7 +28,6 @@ const data = {
         
         },{
             id: "2",
-            imagen: "../imagenes/eskeleto.jpg",
             nombre:"Remera De Entrenamiento Train Essentials  ",
             marca:"adidas",
             modelo:"Ic7430",
