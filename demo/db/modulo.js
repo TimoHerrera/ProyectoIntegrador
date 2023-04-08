@@ -9,10 +9,6 @@ const data = {
             id:"0",
         }],
    
-        header:[
-            {
-                imagen:"../imagenes/Dassler.jpg"
-            }],
     
             productos: [
         {
