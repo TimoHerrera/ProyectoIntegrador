@@ -26,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
-
+app.use('/login', usuarioRouter);
+app.use('/register', usuarioRouter);
 
 
 
