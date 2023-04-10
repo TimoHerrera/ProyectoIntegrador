@@ -1,0 +1,30 @@
+	<!-- product detail -->
+	<div class="container products-wrapper">
+		<div class="d-flex align-items-center">
+			<h2 class="products-title"><%= productos.nombre %></h2> 
+			<p class="product-detail-description">
+				<a href="product-add.html">Editar</a>
+			</p>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<article class="col-12 col-lg-8 product-detail-info">
+					<img src="<%=productos.imagen %>" alt="">
+					<p class="product-detail-description">
+				</article>
+				<div class="col-12 col-lg-4">
+					<section class="comments">
+                        <%= if (productos.comentarios.length==0){%>
+                                <p>no hay comentarios</p>
+                        <% } else { %>
+                            <% for (let i=0; i<1; i++) %>
+						<article>
+                            
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/usuario">Usuario :<%= usuario[i].nombreDeUsuario%> </a> </strong>
+                                <%= productos.comentarios[i].comentario%></p>
+							</div>
+						</article>
+                        <% }
+						
