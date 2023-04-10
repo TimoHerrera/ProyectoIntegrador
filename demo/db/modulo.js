@@ -139,6 +139,9 @@ const data = {
             comentario:"le doy 3 estrellas, no es gran cosa",
         },
     ],
+    resultado: [
+        {}
+    ],
 }
 
 module.exports = data;

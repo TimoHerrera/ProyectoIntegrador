@@ -29,12 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use(`/productos`, productsRouter); //lo conecto con producstouter
-app.use(`/comentarios`,comentRouter);//lo conecto con comentrouter
-app.use(`/usuario`,usuarioRouter);//lo conecto a usuariorouter
-app.use(`/login`,loginRouter);
-app.use(`/register`,registerRouter);
-app.use(`/sResults`, sResultsRouter);
+app.use('/productos', productsRouter); //lo conecto con producstouter
+app.use('/comentarios', comentRouter);//lo conecto con comentrouter
+app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/sResults', sResultsRouter);
 
 
 // catch 404 and forward to error handler
