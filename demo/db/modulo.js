@@ -7,6 +7,8 @@ const data = {
             mail: "paula.rodriguez@gmail.com",
             FotoDePerfil: "../imagenes/paula.jpeg",
             id:"0",
+            dni:33849746
+            
         }],
    
     

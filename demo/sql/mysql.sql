@@ -36,7 +36,7 @@ updatedAt          				TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIM
 
 
 -- insertar 5 usuarios a la tabla usuario
-insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,createdAt,updatedAt) values (default, 'paula.rodriguez@gmail.com', 'pau123_','../imagenes/paula.jpeg','2023-04-02',33849746, default,default );
+insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,createdAt,updatedAt) values (default, 'paula.rodriguez@gmail.com', 'pau123_','../imagenes/paula.jpeg','2023-04-02','33849746', default,default );
 insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,createdAt,updatedAt) values (default, 'pablo.aguilar@gmail.com','woxbjshy_1','../imagenes/paula.jpeg','2023-04-03','20837625',default, default);
 insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,createdAt,updatedAt) values (default,'enriquerico@gmail.com', 'erico14_', '../imagenes/paula.jpeg','2023-04-04','17845634', default,default);
 insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,createdAt,updatedAt) values (default,'erica.esteves@hotmail.com','ebdosucbdo098', '../imagenes/paula.jpeg', '2023-04-05','45678645', default,default);
