@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link width="" rel="shortcut icon" href="/imagenes/logo-mercado-liebre.svg" />
+        
+        <title> dassler</title>
+                <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <!-- Bootstrap Grid Stylesheet -->
+        <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+        <!-- Own Stylesheet -->
+        <link rel="stylesheet"  href="/stylesheets/app.css">
+    </head>
+    <body>
+	
+
+
+		<%-include('./partials/header') %>
+
+
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
@@ -6,6 +28,7 @@
 				<a href="product-add.html">Editar</a>
 			</p>
 		</div>
+
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -14,17 +37,19 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-                        <%= if (productos.comentarios.length==0){%>
+                        <% if (productos.comentarios.length == 0){%>
                                 <p>no hay comentarios</p>
                         <% } else { %>
-                            <% for (let i=0; i<1; i++) %>
+                            <% for (let i=0; i<productos.length; i++) {%>
 						<article>
-                            
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/usuario">Usuario :<%= usuario[i].nombreDeUsuario%> </a> </strong>
                                 <%= productos.comentarios[i].comentario%></p>
 							</div>
 						</article>
-                        <% }
+                        <% }%>
+						<% }%>
+
+					
 						
