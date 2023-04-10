@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productsRouter = require(`./routes/productos`); //obtiene la indo de products.js
+var productsRouter = require(`no./routes/productos`); //obtiene la indo de products.js
 var comentRouter = require(`./routes/comentarios`);//obtiene la indo de comentarios.js
 var usuarioRouter = require(`./routes/usuario`); //obtiene la info de usuario.js
 var loginRouter = require(`./routes/login`); // obtiene la info de login.js
