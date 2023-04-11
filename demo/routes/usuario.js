@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const usuariocontroller=require(`../controllers/usuarioController`)
+const usuarioController=require(`../controllers/usuarioController`)
 
-router.get (`/`,usuariocontroller.index);
-router.get (`/login`,usuariocontroller.login);
-router.get (`/register`,usuariocontroller.register);
+router.get (`/`,usuarioController.index);
+router.get (`/login`,usuarioController.login);
+router.get (`/register`,usuarioController.register);
 module.exports=router;

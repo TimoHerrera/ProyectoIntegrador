@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link width="" rel="shortcut icon" href="/imagenes/logo-mercado-liebre.svg" />
+
+<%-include('./partials/head') %>        
         
-        <title> dassler</title>
-                <!-- Font Awesome Stylesheet -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <!-- Bootstrap Grid Stylesheet -->
-        <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-        <!-- Own Stylesheet -->
-        <link rel="stylesheet"  href="/stylesheets/app.css">
-    </head>
-    <body>
-        
-        
-        <%-include('./partials/header') %>
+<%-include('./partials/header') %>
 
         
 
@@ -24,7 +9,7 @@
         <% for (let i=0; i<10; i++)  {%>
         
             <section class="product-box">
-                <a href="/productos/prodDetail">
+                <a href="/prodDetail">
                     
                     <figure class="product-box_image">
                         <img src=<%= productos[i].imagen %> alt="productimage">
@@ -72,36 +57,5 @@
                 </section>
                 <% } %>
             </div>
-	<!-- footer -->
-	<footer class="main-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-credit-card"></i>
-						<h2>Pagá con tarjeta o en efectivo</h2>
-						<p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
-							siempre es seguro!</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-gift"></i>
-						<h2>Envío gratis desde $ 1.999</h2>
-						<p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un
-							beneficio de Mercado Puntos.</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-user-shield"></i>
-						<h2>Seguridad, de principio a fin</h2>
-						<p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás
-							siempre protegido.</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</footer>
-</body>
-</html>
+
+<%-include('./partials/footer') %>

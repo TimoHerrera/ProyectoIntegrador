@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var productsRouter = require(`./routes/productos`); //obtiene la indo de products.js
 var usuarioRouter = require(`./routes/usuario`); //obtiene la info de usuario.js
-var detailRouter=require(`./routes/prodDetail`)
+
 
 var app = express();
 
@@ -27,10 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
-app.use('/login', usuarioRouter);
-app.use('/register', usuarioRouter);
-app.use('/prodDetail', detailRouter);
-app.use('/addproduct',detailRouter);
+
+// app.use('/login', usuarioRouter);
+// app.use('/register', usuarioRouter);
+// app.use('/prodDetail/', detailRouter);
+// app.use('/addproduct',detailRouter);
 
 
 
