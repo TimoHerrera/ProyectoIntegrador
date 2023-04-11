@@ -5,10 +5,10 @@ const usuariocontroller= {
          return res.render(`usuario`, {usuario:data.usuario, productos: data.productos })          
     },
     login: function(req, res){
-        return res.render("login")
+        return res.render("login", {usuario:data.usuario})
     },
     register: function(req, res){
-        return res.render("register")
+        return res.render("register", {usuario:data.usuario})
     },
 }
 
