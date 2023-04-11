@@ -9,4 +9,4 @@ const prodDetailcontroller= {
     },
 }
 
-module.exports = productcontroller
+module.exports = prodDetailcontroller

@@ -29,7 +29,7 @@ app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
 app.use('/login', usuarioRouter);
 app.use('/register', usuarioRouter);
 app.use('/prodDetail', productsRouter);
-app.use('/addproduct',productsRouter)
+app.use('/addproduct',productsRouter);
 
 
 
