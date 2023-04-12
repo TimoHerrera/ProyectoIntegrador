@@ -28,10 +28,6 @@ app.use('/', indexRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
 
-// app.use('/login', usuarioRouter);
-// app.use('/register', usuarioRouter);
-// app.use('/prodDetail/', detailRouter);
-// app.use('/addproduct',detailRouter);
 
 
 

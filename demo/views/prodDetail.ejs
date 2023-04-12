@@ -8,7 +8,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= productos.nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="/addproduct">Editar</a>
+				<a href="/productos/addproduct">Editar</a>
 			</p>
 		</div>
 
@@ -18,9 +18,24 @@
 					<img src="<%=productos.imagen %>" alt="">
 					<p class="product-detail-description">
 				</article>
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-				</div>
+
+						<div class="col-12 col-lg-4">
+						<section class="comments">
+                            <% for (let i=0; i<productos.length; i++) {%>
+						<article>
+							<img src="<%= productos.comentarios[i].comentimg %>" alt="productos.comentarios[i].usuario" />
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/usuario">Usuario:<%= usuario[i].nombreDeUsuario%> </a> 
+								</strong>
+                                <%= productos.comentarios[i].comentario%>
+								</p>
+						
+					</div>
+					</article>
+					<% }%>
+						</section>
+				
 		</div>              
 	<section>
 		<form class="form" action="" method="POST">

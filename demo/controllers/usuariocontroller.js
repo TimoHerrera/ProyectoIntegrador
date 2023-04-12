@@ -10,6 +10,9 @@ const usuarioController= {
     register: function(req, res){
         return res.render("register", {usuario:data.usuario})
     },
+    edit: function(req, res){
+        return res.render("usuario-edit", {usuario:data.usuario})
+    },
 }
 
 
