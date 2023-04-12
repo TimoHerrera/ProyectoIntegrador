@@ -13,7 +13,7 @@ const productController= {
        return res.render("prodDetail",{productos:data.productos, usuario:data.usuario})
     },
     add: function(req, res){
-        return res.render("add", {usuario:data.usuario})
+        return res.render("addProduct", {usuario:data.usuario})
     },
 }
 
