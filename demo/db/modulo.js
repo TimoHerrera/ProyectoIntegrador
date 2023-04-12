@@ -26,9 +26,11 @@ const data = {
             comentarios:{
                 id: "1",
                 usuario:"jualian.lopez",
-                comentario:"exelente preoducto",}
+                comentario:"exelente preoducto",
+                comentimg:"../imagenes/coment1.jpg",
+            }
         
-        },{
+        },{ 
             id: "2",
             nombre:"Remera De Entrenamiento Train Essentials  ",
             marca:"adidas",
@@ -39,6 +41,7 @@ const data = {
                 id: "2",
                 usuario:"hector12",
                 comentario:"muy buena calidad",
+                comentimg:"../imagenes/coment2.jpg",
             }
         },{
             id: "3",
@@ -52,6 +55,7 @@ const data = {
                 id: "3",
                 usuario:"juancarlos_1",
                 comentario:"tal cual la descripcion de la venta",
+                comentimg:"../imagenes/coment3.jpg",
             }
         },{
             id: "4",
@@ -65,6 +69,7 @@ const data = {
                 id: "4",
                 usuario:"lara_gonzales",
                 comentario:"me esperaba mas",
+                comentimg:"../imagenes/coment4.jpg",
             }
         },{
             id: "5",
@@ -77,7 +82,9 @@ const data = {
             comentarios: {
                 id: "5",
                 usuario:"jorge.cabj",
-                comentario:"10 de 10 en todo sentido",}
+                comentario:"10 de 10 en todo sentido",
+                comentimg:"../imagenes/coment5.jpg",
+            }
         },{
             id: "6",
             imagen:"",
@@ -90,6 +97,7 @@ const data = {
                 id: "6",
                 usuario:"agustinaalvarez",
                 comentario:"que genialidad de producto",
+                comentimg:"../imagenes/coment6.jpg",
             }
         },{
             id: "7",
@@ -103,6 +111,7 @@ const data = {
                 id: "7",
                 usuario:"luana.barrios",
                 comentario:"tal cual como lo esperaba",
+                comentimg:"../imagenes/coment7.jpg",
             }
         },{
             id: "8",
@@ -116,6 +125,7 @@ const data = {
                 id: "8",
                 usuario:"antonelaa_russo1",
                 comentario:"muy buen producto, lastima que tardaron mucho con el envio",
+                comentimg:"../imagenes/coment8.jpg",
             }
         },{
             id: "9",
@@ -129,6 +139,7 @@ const data = {
                 id: "9",
                 usuario:"username123",
                 comentario:"nada fuera de lo normal",
+                comentimg:"../imagenes/coment9.jpg",
             }
         },{
             id: "10",
@@ -142,6 +153,7 @@ const data = {
                 id: "10",
                 usuario:"flortorres_23",
                 comentario:"le doy 3 estrellas, no es gran cosa",
+                comentimg:"../imagenes/coment10.jpg",
             
             },},
     ],
