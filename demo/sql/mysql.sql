@@ -55,7 +55,7 @@ insert into productos (id_producto,nombreProducto,descripcionProducto,id_usuario
 insert into productos (id_producto,nombreProducto,descripcionProducto,id_usuario,createdAt,updatedAt) values (default,'Rompevientos Tejido Essentials 3 Tiras','Esta campera adidas con las 3 Tiras es una capa exterior versátil que se sincroniza con todo lo que tenés en tu armario. Su diseño liviano con forro interno de malla permite la circulación del aire mientras la capucha te protege de la lluvia',default,default,default);
 
 -- INSERTAR 4 COMENTARIOS
-insert into comentarios (id_posteo,comentario,id_usuario) values (default,'exelente preoducto',default);
+insert into comentarios (id_posteo,comentario,id_usuario) values (default,'exelente producto',default);
 insert into comentarios (id_posteo,comentario,id_usuario) values (default,'muy buena calidad',default);
 insert into comentarios (id_posteo,comentario,id_usuario) values (default,'tal cual la descripcion de la venta',default);
 insert into comentarios (id_posteo,comentario,id_usuario) values (default,'me esperaba mas',default);
