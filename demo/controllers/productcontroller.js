@@ -3,14 +3,14 @@ const productController= {
 
     detail: function(req, res){
        let id = req.params.id;
-       let resultado = [];
+       let resultado = null;
        for (let i = 0; i < data.productos.length; i++) {     
         if (id == data.productos[i].id) {
-            resultado.push(data.productos[i].id)
+            resultado = data.productos[i]
             
         }
        }
-       return res.render("prodDetail",{productos:data.productos, usuario:data.usuario})
+       return res.render("prodDetail",{productos:resultado, usuario:data.usuario})
     },
     add: function(req, res){
         return res.render("addProduct", {usuario:data.usuario})
