@@ -59,7 +59,7 @@ img {
 }
 
 .addComm {
-  
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 input,
@@ -82,6 +82,7 @@ hr {
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main-header_credit-link {
@@ -104,6 +105,7 @@ hr {
   border-radius: 3px;
   height: 40px;
   font-size: 1.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .search-form_button {
@@ -133,6 +135,7 @@ hr {
 .main-navbar {
   margin-top: 20px;
   display: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .left-navbar,
@@ -180,6 +183,7 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: var(--gray);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .product-box {
@@ -189,6 +193,7 @@ hr {
   transition: 300ms;
   margin: 20px 0;
   display: flex;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .product-box a {
@@ -275,6 +280,7 @@ hr {
 
 .footer-data {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-data i {
@@ -334,6 +340,7 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .product-detail-price {
@@ -397,6 +404,7 @@ hr {
   justify-content: center;
   padding: 15px 30px;
   margin-top: 15px;
+  
 }
 
 .action-button.edit {
@@ -407,6 +415,7 @@ hr {
 }
 .comments {
   padding: 30px 15px 15px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .comments article{
   margin-bottom: 7.5px;
@@ -537,3 +546,4 @@ textarea.form-input {
     margin: auto;
   }
 }
+
