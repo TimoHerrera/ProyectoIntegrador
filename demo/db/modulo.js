@@ -112,12 +112,12 @@ const data = {
                 comentimg:"/imagenes/coment2.jpg",
             },
             {
-                user:"juancarlos_1",
-                comentario:"tal cual la descripcion de la venta",
-                comentimg:"/imagenes/coment3.jpg",
+                user:"gomezr_brian",
+                comentario:"banco este producto",
+                comentimg:"/imagenes/fotobrian.jpeg",
             },
             {
-                user:"lara_gonzales",
+                user:"elprincipe",
                 comentario:"me esperaba mas",
                 comentimg:"/imagenes/coment4.jpg",
             },
@@ -127,9 +127,9 @@ const data = {
                 comentimg:"/imagenes/coment5.jpg",
             },
             {
-                user:"agustinaalvarez",
+                user:"miguel.raad777",
                 comentario:"que genialidad de producto",
-                comentimg:"/imagenes/coment6.jpg",
+                comentimg:"/imagenes/fotomiguel.png",
             },
             {
                 user:"luana.barrios",
