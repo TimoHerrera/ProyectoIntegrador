@@ -30,28 +30,29 @@
         </section>
         <% } %>
        
-            <% for (let i=0; i<5; i++)  {%>
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Mis productos</h2>
+                </div>
+                <!-- Show mis productos -->
+                <% for(let i = 2; i <10 ; i++) { %>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <section class="product-box">
-                        <a href="/productos/prodDetail/<%= productos[i].id %>">
-                            
+                            <a href="/productos/prodDetail/<%= productos[i].id %>"></a>
                             <figure class="product-box_image">
                                 <img src=<%= productos[i].imagen %> alt="productimage">
-                                <!-- falta lo de la foto que se tiene que sacar tamb de la base de datos --> 
-                            </figure>      
-                        </a>
-                            
+                            </figure>
                             <article class="product-box_data">
-                                
                                 <h2><%= productos[i].nombre%></h2>
-                                <p> <%= productos[i].marca%></p>
-                                <p><%= productos[i].modelo%></p>
                                 <p> <%= productos[i].descripcion%></p>
-                                
-                            </article> 
-                        
+                                <p>12 Comentarios</p>
+                        </a>
                     </section>
                 </div>
-                <% } %>
+                 <% } %>
+            </div>
+        </div>
+                 
 
 <%-include('./partials/footer') %>
