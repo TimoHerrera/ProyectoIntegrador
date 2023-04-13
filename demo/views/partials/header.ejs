@@ -1,19 +1,19 @@
         <!-- Header -->
         <header class="main-header">
             <div class="container">
-                <% for (let j=0; j<1; j++)  {%>
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
-                        <a href="/productos" class="main-header_home-link">
+                        <a href="/index" class="main-header_home-link">
                             <img src="/imagenes/Dassler.jpg" alt="header imagen">
                         </a>
                     </div>
-                    <% } %>
+                    
                     <div class="col-7 col-md-6">
-                        <form action="productos/sResults" method="GET" class="search-form">
+                        <form action="../sResults" method="GET" class="search-form">
                             <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
                             <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                         </form>
+
                     </div>
         
                     <div class="col-12 col-md-4">
@@ -30,7 +30,7 @@
         
                 <nav class="main-navbar">
                     <ul class="left-navbar">
-                        <li><a href="/productos">Todos los productos</a></li>
+                        <li><a href="/index">Todos los productos</a></li>
                         <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
                     </ul>
         

@@ -8,7 +8,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= productos.nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="/addproduct">Editar</a>
+				<a href="/productos/addproduct">Editar</a>
 			</p>
 		</div>
 
@@ -17,18 +17,35 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%=productos.imagen %>" alt="">
 					<p class="product-detail-description">
+						<%= productos.descripcion %>
+					</p>
 				</article>
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-				</div>
+
+						<div class="col-12 col-lg-4">
+							<section class="comments">
+								<% for (let i=0; i<comentarios.length; i++) {%>
+									<article class="comm">
+										<img src="<%= comentarios[i].comentimg %>" alt="productos.comentarios[i].usuario" />
+										<div class="data">
+											<p class="user">
+											<strong> <a href="/usuario">Usuario:<%= comentarios[i].user%> </a> 
+											</strong>
+											<%= comentarios[i].comentario%>
+											</p>
+										</div>
+									</article>
+							<% }%>
+							</section>
+						</div>	
+			</div>	
 		</div>              
-	<section>
-		<form class="form" action="" method="POST">
-			<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-			<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-		</form>
-	</section>
-</div>
+		<section class="addComm">
+			<form class="form" action="" method="POST">
+				<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+				<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+			</form>
+		</section>
+	</div>
 <%-include('./partials/footer') %>
 					
 						
