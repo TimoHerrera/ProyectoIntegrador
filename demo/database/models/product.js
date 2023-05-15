@@ -2,7 +2,7 @@
 module.exports = function(sequelize, dataTypes) {
 
     /* Crear 3 variables */
-    let alias = "Movie"; /* Un apodo para requerirlo en los controllers */
+    let alias = "Producto"; /* Un apodo para requerirlo en los controllers */
 
     /* Mapeo exacto de cada una de las columnas */
     let cols = {
