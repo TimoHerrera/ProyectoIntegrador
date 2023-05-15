@@ -17,7 +17,7 @@ const data = {
             id: "1",
             nombre:"Conjunto 3 Tiras Aeroready Essentials Corte Clásico",
             marca:"adidas",
-            modelo:"Gk9950 A",
+            modelo:"Gk995 A",
             descripcion:"Sin importar cómo lo usés, la tecnología AEROREADY se encarga de mantener tu cuerpo seco y cómodo de la mañana a la noche.",
             imagen: "/imagenes/conjunto3tiras.webp",
                 
