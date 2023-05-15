@@ -2,42 +2,39 @@
 module.exports = function(sequelize, dataTypes) {
 
     /* Crear 3 variables */
-    let alias = "Producto"; /* Un apodo para requerirlo en los controllers */
+    let alias = "Usuario"; /* Un apodo para requerirlo en los controllers */
 
     /* Mapeo exacto de cada una de las columnas */
     let cols = {
-        id:{
+        id_usuario:{
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        title:{
-            type: dataTypes.STRING,
+        email:{
+            type: dataTypes.STRING(100),
         },
-        rating:{
-            type: dataTypes.DECIMAL,
+        pssword:{
+            type: dataTypes.STRING(500),
         },
-        awards:{
-            type: dataTypes.INTEGER,
+        fotodeperfil:{
+            type: dataTypes.STRING(100),
         },
-        release_date:{
+        fecha:{
             type: dataTypes.DATE,
         },
-        length:{
+        dni:{
             type: dataTypes.INTEGER,
         },
-        genre_id:{
-            type: dataTypes.INTEGER,
-        }
     };
 
     /* Objeto literal para configurar la tabla */
     let config = {
-        tableName: 'movies',
-        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        tableName: 'usuarios',
+        timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
         underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
-    const Movies = sequelize.define(alias, cols, config);
+    const Usuarios = sequelize.define(alias, cols, config);
     
-    return Movies;
+    return Usuarios;
 }
