@@ -40,4 +40,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = db;
+module.exports = db;//va a exportar un Ol que va a contener todos los modelos que nosotros creemos para despues usar el que yo quiero en el controlador

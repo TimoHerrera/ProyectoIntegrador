@@ -12,13 +12,13 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER,
         },
         email:{
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
         },
         pssword:{
-            type: dataTypes.STRING(500),
+            type: dataTypes.STRING,
         },
         fotodeperfil:{
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
         },
         fecha:{
             type: dataTypes.DATE,
