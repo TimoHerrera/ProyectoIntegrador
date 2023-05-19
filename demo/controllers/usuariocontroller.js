@@ -17,3 +17,22 @@ const usuarioController= {
 
 
 module.exports = usuarioController
+
+//lo nuevo
+const db = require('../database/models')
+const ussuarios = db.Usuario;
+let op = db.Sequelize.Op;
+
+const UsuarioController ={
+findAll: (req, res) => {
+
+    ussuarios.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
+    .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
+        return res.render("usuarios", {usuarios: result});//a donde lo reenderizo? 
+    }).catch(function (err){
+        console.log(err);
+    });
+}
+};
+
+module.exports = UsuarioController;
