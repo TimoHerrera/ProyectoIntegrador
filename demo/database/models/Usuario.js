@@ -36,5 +36,13 @@ module.exports = function(sequelize, dataTypes) {
     };
     const Usuarios = sequelize.define(alias, cols, config);
     
+
+    // creo la relacion entre cometario y usuario
+    Usuarios.associate=function (models) {
+        Usuario.hasMany(models.Productos,{
+            as:"productos",
+            foreingKey:"id_usuario"
+        } )
+    };
     return Usuarios;
 }

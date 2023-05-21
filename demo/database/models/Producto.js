@@ -1,3 +1,5 @@
+const { productos } = require("../../db/modulo");
+
 /* El modelo es una función que recibe 2 parámetros. Se hace un Modelo por cada tabla de la base de datos */
 module.exports = function(sequelize, dataTypes) {
 
@@ -29,6 +31,15 @@ module.exports = function(sequelize, dataTypes) {
         underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     const Productos = sequelize.define(alias, cols, config); //traigo el parametro sequelize (es un ol), que tiene un metodo pincipal define que ayuda a definir mi modelo cone esos tres parametros
-    
+           
+    // creo las relaciones 
+            Producto.associate=function(models) {
+                // pertenece a
+                    Productos.belongsTo(models.Usuario,{
+                        as:"usuarios",
+                        foreingKey:"id_usuario"
+                    } )
+                };
+        
     return Productos;
 }

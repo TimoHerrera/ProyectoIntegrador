@@ -1,6 +1,6 @@
 //recibe dos Ol como parametros
 module.exports = function (sequelize,dataTypes) {
-    let alias = 'Comentario';
+    let alias = 'Comentarios';
     let cols = {
         id_posteo: {
             autoIncrement: true,
@@ -23,5 +23,6 @@ module.exports = function (sequelize,dataTypes) {
     }
     const Comentarios = sequelize.define(alias, cols, config);
     
+
     return Comentarios;
 }

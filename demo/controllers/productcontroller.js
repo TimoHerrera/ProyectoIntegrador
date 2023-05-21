@@ -42,7 +42,17 @@ const producttController = {
     },
     show: function (req,res) {//voy a filtrar por pk
     let id = req.params.id; //capturo el id a travez de la url
-    producttos.findByPk(id)
+
+    // creo relaciones entre los productos y los usuarios que estarian en los productos
+    let rel={
+        include:[
+            {
+                association: "usuarios"
+            }
+        ]
+    };
+
+    productos.findByPk(id, rel)
     .then(function(result){
         return res.render('prodDetail',{productos: result})
     })
