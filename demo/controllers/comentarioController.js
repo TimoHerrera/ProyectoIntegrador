@@ -9,7 +9,7 @@ const comentarioController = {
 
         commentarios.findAll() //doble m porque ya hay la variable comentarios en una vista
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
-            return res.render("comentarios", {comentarios: result});//a donde lo reenderizo?
+            return res.render("comentarios", {comentarios: result});//A DONDE LA RENDERIZO
         }).catch(function (err){
             console.log(err);
         });

@@ -28,14 +28,14 @@ module.exports = productController
 //nuevo
 const db = require('../database/models')
 const producttos = db.Producto;
-let op = db.Sequelize.Op;
+let op = db.Sequelize.Op; 
 
 const producttController = {
     findAll: (req, res) => {
 
         producttos.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
-            return res.render("productos", {productos: result});//a donde lo reenderizo? creo que esta bien esta en la vista esto
+            return res.render("index", {productos: result});//a donde lo reenderizo? creo que esta bien esta en la vista esto
         }).catch(function (err){
             console.log(err);
         });
@@ -60,16 +60,16 @@ const producttController = {
         console.log(error);
     });
     },
-    Sresultado: function (req,res) {
-    let buscar = eq.query.producto;        //capturo la query string (no se como se llama la query, me tenfo que fijar en la url, no se si es producto)
+    Sresultado: function (req,res) {//BUSCADOR
+    let buscar = req.query.producto;        //capturo la query string (no se como se llama la query, me tenfo que fijar en la url, no se si es producto)
     
-    DeviceMotionEvent.findAll({
+    producttos.findAll({
         where: [{
            nombre:{[op.like]:"%" + buscar + "%"} //me busca por lo que busco
         }]
     })
     .then(function(result){
-        res.render('sResults',{productos: result})
+        res.render('sResults',{productos: result})//esta bien ese productos?
     })
     .catch(function(error){
             console.log(error)

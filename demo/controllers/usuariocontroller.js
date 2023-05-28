@@ -28,7 +28,7 @@ findAll: (req, res) => {
 
     ussuarios.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
     .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
-        return res.render("usuarios", {usuarios: result});//a donde lo reenderizo? 
+        return res.render("usuario", {usuario: result});//a donde lo reenderizo? LO MODIFIQUE EL 28 MAYO
     }).catch(function (err){
         console.log(err);
     });
