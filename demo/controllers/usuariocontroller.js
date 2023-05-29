@@ -1,4 +1,4 @@
-const data = require("../db/modulo");
+/* const data = require("../db/modulo");
 const usuarioController= {
     index: function(req,res){
          
@@ -13,7 +13,7 @@ const usuarioController= {
     edit: function(req, res){
         return res.render("usuario-edit", {usuario:data.usuario})
     },
-}
+} */
 
 
 module.exports = usuarioController

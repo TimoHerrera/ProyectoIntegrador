@@ -1,41 +1,41 @@
-const data = require("../db/modulo");
-const productController= {
+//const data = require("../db/modulo");
+// const productController= {
 
-    detail: function(req, res){
-       let id = req.params.id;
-       let resultado = null;
-       for (let i = 0; i < data.productos.length; i++) {     
-        if (id == data.productos[i].id) {
-            resultado = data.productos[i]
+//     detail: function(req, res){
+//        let id = req.params.id;
+//        let resultado = null;
+//        for (let i = 0; i < data.productos.length; i++) {     
+//         if (id == data.productos[i].id) {
+//             resultado = data.productos[i]
             
-        }
-       }
-       return res.render("prodDetail",{productos:resultado, usuario:data.usuario, comentarios:data.comentarios})
-    },
+//         }
+//        }
+//        return res.render("prodDetail",{productos:resultado, usuario:data.usuario, comentarios:data.comentarios})
+//     },
     
-    add: function(req, res){
-        return res.render("addProduct", {usuario:data.usuario})
-    },
+//     add: function(req, res){
+//         return res.render("addProduct", {usuario:data.usuario})
+//     },
 
-    busqueda: function (req, res) {
-        return res.render("sResults", {productos:data.productos, usuario:data.usuario});
-      },
+//     busqueda: function (req, res) {
+//         return res.render("sResults", {productos:data.productos, usuario:data.usuario});
+//       },
 
-}
+// }
 
-module.exports = productController
+//module.exports = productController
 //que se hace con lo de antes, se borra?
 //nuevo
 const db = require('../database/models')
 const producttos = db.Producto;
 let op = db.Sequelize.Op; 
 
-const producttController = {
+const productController = {
     findAll: (req, res) => {
 
         producttos.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
-            return res.render("index", {productos: result});//a donde lo reenderizo? creo que esta bien esta en la vista esto
+            return res.render("index", {productos: result});
         }).catch(function (err){
             console.log(err);
         });
@@ -61,20 +61,21 @@ const producttController = {
     });
     },
     Sresultado: function (req,res) {//BUSCADOR
-    let buscar = req.query.producto;        //capturo la query string (no se como se llama la query, me tenfo que fijar en la url, no se si es producto)
+    let buscar = req.query.search;        //esta bien la query
     
     producttos.findAll({
         where: [{
-           nombre:{[op.like]:"%" + buscar + "%"} //me busca por lo que busco
+           nombre:{[op.like]:"%" + buscar + "%"} //si hay error esta en la vista, porque aca esta todo bien
         }]
     })
     .then(function(result){
-        res.render('sResults',{productos: result})//esta bien ese productos?
+        res.render('sResults',{productos: result})//bien 
     })
     .catch(function(error){
             console.log(error)
     });
     },
+    //ya es la clase del create update destroy
     showForm: function(req,res){
         return res.render('addproduct')//esta bien el sufijo?
     },
@@ -83,7 +84,7 @@ const producttController = {
     }
 };
 
-module.exports = producttController;
+module.exports = productController;
 
 //where para consultas especiales (por ahora no lo voy a agregar hasta que nos den la consigna)
 //order y limit tambien se pueden usar

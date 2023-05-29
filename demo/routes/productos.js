@@ -1,18 +1,19 @@
-var express = require('express');
+/* var express = require('express');
 var router = express.Router();
 const productController = require(`../controllers/productcontroller`);
 
 // router.get (`/`,productcontroller.index);
 router.get (`/prodDetail/:id`,productController.detail);
 router.get (`/addProduct`,productController.add);
-router.get (`/sResults`,productController.busqueda);  
+router.get (`/sResults`,productController.busqueda);  */
 
+const productController = require(`../controllers/productcontroller`);
 //get productos listing
-router.get('/all',productController.findAll);//va all? no es /productos?
+router.get('/index',productController.findAll);//no es /productos puse/ index pq es donde me muestra todos lo productos
 
 
 //find by pk
-router.get('/id:id', productController.show);
+router.get('/prodDetail/:id', productController.show);//esta bien el sufijo, sino es /:id
 
 //ejemplo de buscador
 router.get('/sResults',productController.Sresultado);// no se bien el sufijo
