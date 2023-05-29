@@ -74,6 +74,12 @@ const producttController = {
     .catch(function(error){
             console.log(error)
     });
+    },
+    showForm: function(req,res){
+        return res.render('addproduct')//esta bien el sufijo?
+    },
+    store: function (req,res){
+
     }
 };
 

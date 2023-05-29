@@ -1,6 +1,6 @@
 //recibe dos Ol como parametros
 module.exports = function (sequelize,dataTypes) {
-    let alias = 'Comentarios';
+    let alias = 'Comentario';
     let cols = {
         id_posteo: {
             autoIncrement: true,
@@ -21,8 +21,8 @@ module.exports = function (sequelize,dataTypes) {
     timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
     underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase;
     }
-    const Comentarios = sequelize.define(alias, cols, config);
+    const Comentario = sequelize.define(alias, cols, config);
     
 
-    return Comentarios;
+    return Comentario;
 }

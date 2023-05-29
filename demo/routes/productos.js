@@ -10,10 +10,16 @@ router.get (`/sResults`,productController.busqueda);
 //get productos listing
 router.get('/all',productController.findAll);//va all? no es /productos?
 
-module.exports=router;
 
 //find by pk
 router.get('/id:id', productController.show);
 
 //ejemplo de buscador
 router.get('/sResults',productController.Sresultado);// no se bien el sufijo
+
+//mostrar form moivies (mostrar el form para que agregue una pelicula)
+router.get('/addProduct', productController.showForm) //el sufijo es el de la pagina donde me permite agregar un prod
+//guardar el form de movie
+
+router.post('addProduct', productController.store)
+module.exports=router;
