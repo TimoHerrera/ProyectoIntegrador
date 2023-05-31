@@ -1,23 +1,3 @@
-/* const data = require("../db/modulo");
-const usuarioController= {
-    index: function(req,res){
-         
-        return res.render("usuario", {usuario:data.usuario, productos: data.productos })          
-    },
-    login: function(req, res){
-        return res.render("login", {usuario:data.usuario})
-    },
-    register: function(req, res){
-        return res.render("register", {usuario:data.usuario})
-    },
-    edit: function(req, res){
-        return res.render("usuario-edit", {usuario:data.usuario})
-    },
-} */
-
-
-module.exports = usuarioController
-
 //lo nuevo
 const db = require('../database/models')
 const ussuarios = db.Usuario;
@@ -36,3 +16,23 @@ findAll: (req, res) => {
 };
 
 module.exports = UsuarioController;
+
+/* const data = require("../db/modulo");
+const usuarioController= {
+    index: function(req,res){
+         
+        return res.render("usuario", {usuario:data.usuario, productos: data.productos })          
+    },
+    login: function(req, res){
+        return res.render("login", {usuario:data.usuario})
+    },
+    register: function(req, res){
+        return res.render("register", {usuario:data.usuario})
+    },
+    edit: function(req, res){
+        return res.render("usuario-edit", {usuario:data.usuario})
+    },
+} */
+
+
+// module.exports = usuarioController

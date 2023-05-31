@@ -38,11 +38,11 @@ module.exports = function(sequelize, dataTypes) {
     
 
     // creo la relacion entre cometario y usuario
-    Usuario.associate=function (models) {
-        Usuario.hasMany(models.Producto,{
-            as:"productos",
-            foreingKey:"id_usuario"
-        } )
-    };
+    // Usuario.associate=function (models) {
+    //     Usuario.hasMany(models.Producto,{
+    //         as:"productos",
+    //         foreingKey:"id_usuario"
+    //     } )
+    // };
     return Usuario;
 }
