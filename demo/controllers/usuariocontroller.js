@@ -1,7 +1,7 @@
 //lo nuevo
 const db = require('../database/models')
 const ussuarios = db.Usuario;
-let op = db.Sequelize.Op;
+let op = db.Sequelize.Op; //EL op se puede usar para buscar un usuario en especial!!
 
 const UsuarioController ={
 findAll: (req, res) => {
