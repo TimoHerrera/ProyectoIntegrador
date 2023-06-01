@@ -37,12 +37,12 @@ module.exports = function(sequelize, dataTypes) {
     const Usuario = sequelize.define(alias, cols, config);
     
 
-    // creo la relacion entre cometario y usuario
-    // Usuario.associate=function (models) {
-    //     Usuario.hasMany(models.Producto,{
-    //         as:"productos",
-    //         foreingKey:"id_usuario"
-    //     } )
-    // };
+    // creo la relacion entre producto y usuario
+     Usuario.associate=function (models) {
+         Usuario.hasMany(models.Producto,{
+             as:"productos",
+             foreingKey:"id_usuario"
+         } )
+     };
     return Usuario;
 }

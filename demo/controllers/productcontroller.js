@@ -20,7 +20,10 @@ const productController = {
     let rel={
         include:[
             {
-                association: "usuarios"
+                association: "usuarios" //lo asocio con el nombre que le dimos a as dentro de producto
+            }
+            {
+                association: "comentarios" //lo asocio con el nombre que le dimos a as dentro de producto
             }
         ]
     };

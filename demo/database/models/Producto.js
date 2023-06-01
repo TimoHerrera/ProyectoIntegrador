@@ -33,13 +33,20 @@ module.exports = function(sequelize, dataTypes) {
     const Producto = sequelize.define(alias, cols, config); //traigo el parametro sequelize (es un ol), que tiene un metodo pincipal define que ayuda a definir mi modelo cone esos tres parametros
            
     // creo las relaciones 
-            // Producto.associate=function(models) {
-            //     // pertenece a
-            //         Producto.belongsTo(models.Usuario,{
-            //             as:"usuarios",
-            //             foreingKey:"id_usuario"
-            //         } )
-            //     };
+             Producto.associate=function(models) {
+                 // pertenece a
+                         Producto.belongsTo(models.Usuario,{
+                         as:"usuarios", //era con el nombre de la tabla o el alias?
+                         foreingKey:"id_usuario"
+                     } ),
+                     Producto.belongsToMany(models.Comentario,{
+                        as:"comentarios",
+                        through:"usuarios",//tabla pivot no se si esta bien
+                        foreingKey:"id_producto", //no estoy seguro si la foreing y la other key estan bien puestas
+                        otherkey:"id_comentario",
+                        timestamps: false
+                     })
+                 };
         
     return Producto;
 }
