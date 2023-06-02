@@ -40,9 +40,14 @@ module.exports = function(sequelize, dataTypes) {
     // creo la relacion entre producto y usuario
      Usuario.associate=function (models) {
          Usuario.hasMany(models.Producto,{
-             as:"productos",
+             as:"Producto",
              foreingKey:"id_usuario"
          } )
+         Usuario.hasMany(models.Comentario,{
+            as:"Comentario",
+            foreingKey:"id_usuario"
+    
+         })
      };
     return Usuario;
 }

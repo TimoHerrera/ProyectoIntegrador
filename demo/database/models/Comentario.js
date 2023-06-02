@@ -27,13 +27,14 @@ module.exports = function (sequelize,dataTypes) {
     // creo las relaciones 
         Comentario.associate=function(models) {
         //     // pertenece a
-            Comentario.belongsToMany(models.Producto,{
-                    as:"Productos", //alias 
-                    through:"usuarios", //tabla pivot no se si esta bien
-                    foreingKey:"id_comentario", //no estoy seguro si la foreing y la other key estan bien puestas
-                    otherkey:"id_producto",
-                    timestamps: false
+            Comentario.belongsTo(models.Producto,{
+                as:"Producto",
+                foreingkey:"id_usuario"
                  })
+            Comentario.belongsTo(models.Usuario,{
+                as:"Usuario",
+                foreingkey:"id_usuario"
+                })
              };
 
     return Comentario;

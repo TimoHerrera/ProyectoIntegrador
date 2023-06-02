@@ -36,15 +36,13 @@ module.exports = function(sequelize, dataTypes) {
              Producto.associate=function(models) {
                  // pertenece a
                          Producto.belongsTo(models.Usuario,{
-                         as:"usuarios", //era con el nombre de la tabla o el alias?
+                         as:"Usuario", //es con el alias
                          foreingKey:"id_usuario"
                      } ),
-                     Producto.belongsToMany(models.Comentario,{
-                        as:"comentarios",
-                        through:"usuarios",//tabla pivot no se si esta bien
-                        foreingKey:"id_producto", //no estoy seguro si la foreing y la other key estan bien puestas
-                        otherkey:"id_comentario",
-                        timestamps: false
+                     Producto.hasMany(models.Comentario,{
+                        as:"Comentario",
+                        foreingKey:"id_usuario"
+                
                      })
                  };
         
