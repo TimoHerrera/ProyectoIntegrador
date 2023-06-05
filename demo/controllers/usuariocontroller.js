@@ -48,8 +48,34 @@ login:function(req,res) {
     return res.render('login')
 },
 loginPost:function(req,res) {
-    return res.redirect('/')
-},
+        let emailBuscado= req.body.email;
+        let pass = req.body.password;
+        
+        let filtrado ={
+            where:[{email:emailBuscado}]
+        };
+
+        ussuarios.findOne(filtrado)
+        .then ((result)=>{
+
+            
+            if (result != null) {
+                let clavecorrecta= bcrypt.compareSync(pass,result.pssword)
+                if (clavecorrecta) {
+                    return res.send("existe el mail y contraseña ")
+                } else {
+                    return res.send(" existe el mail pero la contraseña es inexistente ")
+                }
+            } else {
+                return res.send("Usuario inexistente")
+            }
+
+
+        }) .catch ((error) =>{
+            console.log(error);
+        });
+        
+    },
 };
 
 
