@@ -3,6 +3,7 @@ use proyectointegrador;
 
 CREATE TABLE usuarios (
 id_usuario			INT				UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+usuario_nombre  	VARCHAR(100)	NOT NULL UNIQUE,
 email				VARCHAR(100)	NOT NULL UNIQUE,
 pssword				VARCHAR(500)	NOT NULL,
 fotoPerfil			VARCHAR(100)	NOT NULL,

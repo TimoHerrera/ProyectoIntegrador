@@ -11,6 +11,9 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
+        usuario_nombre:{
+            type: dataTypes.STRING,
+        },
         email:{
             type: dataTypes.STRING,
         },
