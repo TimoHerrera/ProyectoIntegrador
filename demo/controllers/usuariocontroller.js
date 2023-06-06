@@ -17,22 +17,21 @@ findAll: (req, res) => {
     });
 },
 
-crear:function(req,res) {
+create:function(req,res) {
     return res.render('register')
 },
 store: function (req,res) {
     let info= req.body;
     
-    let ussuarioSave={
+    let ussuarioSave={ //aca se encuentra el errorr
         usuario_nombre:info.usuario_nombre,
         email:info.email,
         pssword:bcrypt.hashSync(info.pssword, 10),
-        created_at:new DATE(),
-        updated_at:new DATE(),
+        
 
     }
 
-    ussuarios.crear(ussuarioSave)
+    ussuarios.create(ussuarioSave)
     .then(function(result){
         return res.redirect('/usuario/login'); 
     })
@@ -62,8 +61,11 @@ loginPost:function(req,res) {
             if (result != null) {
                 let clavecorrecta= bcrypt.compareSync(pass,result.pssword)
                 if (clavecorrecta) {
+
                     return res.send("existe el mail y contraseña ")
+
                 } else {
+
                     return res.send(" existe el mail pero la contraseña es inexistente ")
                 }
             } else {

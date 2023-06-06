@@ -28,8 +28,10 @@ updatedAt          								TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT
 CREATE TABLE comentarios(
 id_posteo      INT				UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 comentario     TEXT             NOT NULL,
-id_usuario     INT				UNSIGNED,                     
+id_usuario     INT				UNSIGNED,        
+id_producto 	INT  			UNSIGNED,           
 FOREIGN KEY (id_usuario)		REFERENCES usuarios(id_usuario), 
+FOREIGN KEY (id_producto)		REFERENCES productos(id_producto),
 
 createdAt                       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt          				TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

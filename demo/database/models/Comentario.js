@@ -29,7 +29,7 @@ module.exports = function (sequelize,dataTypes) {
         //     // pertenece a
             Comentario.belongsTo(models.Producto,{
                 as:"Producto",
-                foreingkey:"id_posteo"
+                foreingkey:"id_producto"
                  })
             Comentario.belongsTo(models.Usuario,{
                 as:"Usuario",
