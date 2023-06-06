@@ -1,3 +1,4 @@
+
 /* El modelo es una función que recibe 2 parámetros. Se hace un Modelo por cada tabla de la base de datos */
 module.exports = function(sequelize, dataTypes) {
 

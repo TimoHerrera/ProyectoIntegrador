@@ -25,23 +25,24 @@
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
-				<form action="" method="GET">	
-					<label>Usuario: </label>
-					<input type="text" name="usuario" value="">
+				<form action="/" method="GET">	
+					<label>Correo electronico </label>
+					<input id="email" class="input" type="email" name="email" placeholder="email" />
+
 					<br>
 					<br>
 		
 					<label>Contraseña: </label>
-					<input type="password" name="contraseña" value="">
+					<input id="pssword" class="input" type="password" name="password" placeholder="Clave" />
 					<br>
 					<br>
 						
-					<label>Recordarme: </label>
+					<!-- <label>Recordarme: </label>
 					<input type="checkbox" name="recordarme" value="">
-					<br>
-					<br>
+					<br> -->
+					
 		
-					<button type="submit">Enviar</button>
+					<button type="submit" action="/">Enviar</button>
 				</form>
 
 <%-include('./partials/footer') %>
