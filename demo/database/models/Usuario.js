@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        usuario_nombre:{
+        nombre:{
             type: dataTypes.STRING,
         },
         email:{
@@ -21,7 +21,7 @@ module.exports = function(sequelize, dataTypes) {
         pssword:{
             type: dataTypes.STRING,
         },
-        fotodeperfil:{
+        foto_perfil:{
             type: dataTypes.STRING,
         },
         fecha:{
@@ -29,6 +29,12 @@ module.exports = function(sequelize, dataTypes) {
         },
         dni:{
             type: dataTypes.INTEGER,
+        },
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at:{
+            type: dataTypes.DATE, //fijarse si esta bien el timestamp
         },
     };
 

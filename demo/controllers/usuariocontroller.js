@@ -23,11 +23,11 @@
     store: function (req,res) {
         let info= req.body;
         
-        let ussuarioSave={ //aca se encuentra el errorr
-            usuario_nombre:info.usuario_nombre,
+        let ussuarioSave={ 
+            nombre:info.usuarioNombre,// lo de la izquierda es el nombre de la tabla y la derecha el nombre del form de register
             email:info.email,
             pssword:bcrypt.hashSync(info.pssword, 10),
-            remember_token: ""  
+            // dni:info.documento
             
 
         }

@@ -11,15 +11,21 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        nombreProducto:{
+        nombre_producto	:{
             type: dataTypes.STRING,
         },
-        descripcionProducto:{
+        descripcion_producto:{
             type: dataTypes.STRING,
         },
         id_usuario:{
             type: dataTypes.INTEGER,
         },
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at:{
+            type: dataTypes.DATE, //fijarse si esta bien el timestamp
+        }
     };
 
     /* Objeto literal para configurar la tabla */

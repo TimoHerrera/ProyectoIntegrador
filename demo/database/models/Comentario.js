@@ -13,8 +13,12 @@ module.exports = function (sequelize,dataTypes) {
         id_usuario:{
             type: dataTypes.INTEGER,//que pongo cuando es una foreign key
         },
-        
-
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at:{
+            type: dataTypes.DATE, 
+        }
     };
     let config = {
     tableName: 'comentarios',
