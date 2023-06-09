@@ -6,43 +6,43 @@
     <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
+				
 				<h2 class="products-title">Registrate</h2>
-			</div>
-			<form action="" method="GET">
-				<label>Mail: </label>
+			
+			<form action="/usuario/register" method="post">
+
+				<label>Correo electronico </label>
 				<input type="email" name="email" value="">
 		
-				<br>    
+				<br>   
+
 				<br>
-		
 				<label>Contraseña: </label>
-				<input type="password" name="contraseña" value="">
-		
+				<input type="password" name="pssword" value="">
 				<br>
-				<br>
-		
-				<label>Usuario: </label>
-				<input type="text" name="usuario" value="">
+
+				<br>		
+				<label>Nombre de usuario </label>
+				<input type="text" name="usuarioNombre" value="">
 				<br>
 				<br>
 
 				<label>Fecha de Nacimiento: </label>
-				<input type="date" name="fecha" value="">
+				<input type="date" name="fecha_nacimiento" value="">
 				<br>
-				<br>
-				<label>Numero de Documento: </label>
-				<input type="text" name="documento" pattern="[0-9]" maxlength="8" required title="El DNI debe contener 8 números">
-				<br>
-				<br>
-				<label>Foto de Perfil: </label>
-				<input type="image" name="fotoPerfil" value="">
-				<br>
+				
+				<label>Numero de Documento:</label>
+				<input type="text" name="documento" required title="El DNI debe contener 8 números">
 				<br>
 
-				<button type="submit">Enviar</button>
+				
+
+				<button type="submit" action="/usuario/login">Enviar</button>
 		
 		
 		
 			</form>
-
+			</div>
+		</div>
+	</div>
 <%-include('./partials/footer') %>

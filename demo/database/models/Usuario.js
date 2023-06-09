@@ -1,3 +1,4 @@
+
 /* El modelo es una función que recibe 2 parámetros. Se hace un Modelo por cada tabla de la base de datos */
 module.exports = function(sequelize, dataTypes) {
 
@@ -11,13 +12,16 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
+        nombre:{
+            type: dataTypes.STRING,
+        },
         email:{
             type: dataTypes.STRING,
         },
         pssword:{
             type: dataTypes.STRING,
         },
-        fotodeperfil:{
+        foto_perfil:{
             type: dataTypes.STRING,
         },
         fecha:{
@@ -25,6 +29,12 @@ module.exports = function(sequelize, dataTypes) {
         },
         dni:{
             type: dataTypes.INTEGER,
+        },
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at:{
+            type: dataTypes.DATE, //fijarse si esta bien el timestamp
         },
     };
 

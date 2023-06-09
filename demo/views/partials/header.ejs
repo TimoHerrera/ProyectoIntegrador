@@ -30,8 +30,10 @@
         
                 <nav class="main-navbar">
                     <ul class="left-navbar">
-                        <li><a href="/">Todos los productos</a></li>
+                        <!-- <li><a href="/">Todos los productos</a></li> -->
                         <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
+                        <li class="buttonLog"><a href ="/usuario/register">Register</a></li>
+                        <li class="buttonLog"><a href ="/usuario/login">Login</a></li>
                     </ul>
         
                     <ul class="right-navbar">
@@ -47,13 +49,7 @@
                             </form>
                         </li> -->
                         
-                        <% for (let i=0; i< usuario.length; i++)  {%>
-                            <li>
-                                <a href="/usuario"><%= usuario[i].nombreDeUsuario %> <i class="far fa-address-card"></i>
-                                </a>
-                            </li>
-                            <% } %>
-                    </ul>
+
                 </nav>
             </div>
         </header>

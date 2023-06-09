@@ -1,5 +1,3 @@
-const { productos } = require("../../db/modulo");
-
 /* El modelo es una función que recibe 2 parámetros. Se hace un Modelo por cada tabla de la base de datos */
 module.exports = function(sequelize, dataTypes) {
 
@@ -13,15 +11,21 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        nombreProducto:{
+        nombre_producto	:{
             type: dataTypes.STRING,
         },
-        descripcionProducto:{
+        descripcion_producto:{
             type: dataTypes.STRING,
         },
         id_usuario:{
             type: dataTypes.INTEGER,
         },
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at:{
+            type: dataTypes.DATE, //fijarse si esta bien el timestamp
+        }
     };
 
     /* Objeto literal para configurar la tabla */
@@ -41,7 +45,7 @@ module.exports = function(sequelize, dataTypes) {
                      } ),
                         Producto.hasMany(models.Comentario,{
                         as:"Comentario",
-                        foreingKey:"id_usuario"
+                        foreingKey:"id_producto"
                 
                      })
                  };
