@@ -310,7 +310,11 @@ hr {
   color: var(--gray);
   padding: 15px 0;
 }
-
+.buttonLog{
+  background-color: black;
+  color: white;
+  padding: 8px 15px 8px 15 px;
+}
 
 /*====== Product Detail ======*/
 .product-detail {

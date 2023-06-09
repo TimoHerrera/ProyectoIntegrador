@@ -21,17 +21,16 @@
         return res.render('register')
     },
     store: function (req,res) {
-        let info= req.body;
+        let info = req.body;
         
-        let ussuarioSave={ 
+        let ussuarioSave = { 
             nombre:info.usuarioNombre,// lo de la izquierda es el nombre de la tabla y la derecha el nombre del form de register
             email:info.email,
             pssword:bcrypt.hashSync(info.pssword, 10),
-            // dni:info.documento
-            
-
+            fecha:info.fecha_nacimiento,
+            dni : info.documento
         }
-
+        console.log(ussuarioSave);
         ussuarios.create(ussuarioSave)
         .then(function(result){
             return res.redirect('/usuario/login'); 
@@ -40,13 +39,13 @@
         .catch(function (error) {
             console.log(error);
         });
-
         
     },
 
     login:function(req,res) {
         return res.render('login')
     },
+    
     loginPost:function(req,res) {
             let emailBuscado= req.body.email;
             let pass = req.body.pssword;
@@ -58,12 +57,14 @@
             ussuarios.findOne(filtrado)
             .then ((result)=>{
 
-                
                 if (result != null) {
+                    let pass = req.body.pssword;
+                    console.log(result.pssword);
+                    console.log(pass);
                     let clavecorrecta= bcrypt.compareSync(pass, result.pssword)
                     if (clavecorrecta) {
 
-                        return res.send("existe el mail y contraseña ")
+                        return res.redirect('/')
 
                     } else {
 

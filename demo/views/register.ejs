@@ -8,7 +8,7 @@
 			<div class="col-12">
 				
 				<h2 class="products-title">Registrate</h2>
-			</div>
+			
 			<form action="/usuario/register" method="post">
 
 				<label>Correo electronico </label>
@@ -27,23 +27,22 @@
 				<br>
 				<br>
 
-				<!-- <label>Fecha de Nacimiento: </label>
-				<input type="date" name="fecha" value="">
+				<label>Fecha de Nacimiento: </label>
+				<input type="date" name="fecha_nacimiento" value="">
 				<br>
-				<br> -->
-				 <!-- <label>Numero de Documento: </label>
-				<input type="text" name="documento" pattern="[0-9]" maxlength="8" required title="El DNI debe contener 8 números">
-				<br> -->
+				
+				<label>Numero de Documento:</label>
+				<input type="text" name="documento" required title="El DNI debe contener 8 números">
 				<br>
-				<!-- <label>Foto de Perfil: </label>
-				<input type="image" name="fotoPerfil" value="">
-				<br>
-				<br> --> -->
 
-				<button type="submit" action="/usuario/login" >Enviar</button>
+				
+
+				<button type="submit" action="/usuario/login">Enviar</button>
 		
 		
 		
 			</form>
-
+			</div>
+		</div>
+	</div>
 <%-include('./partials/footer') %>
