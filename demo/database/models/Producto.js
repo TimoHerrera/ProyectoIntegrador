@@ -33,18 +33,18 @@ module.exports = function(sequelize, dataTypes) {
     const Producto = sequelize.define(alias, cols, config); //traigo el parametro sequelize (es un ol), que tiene un metodo pincipal define que ayuda a definir mi modelo cone esos tres parametros
            
     // creo las relaciones 
-             Producto.associate=function(models) {
+             Producto.associate = function(models) {
                  // pertenece a
-                         Producto.belongsTo(models.Usuario,{
+                        Producto.belongsTo(models.Usuario,{
                          as:"Usuario", //es con el alias
                          foreingKey:"id_usuario"
                      } ),
-                     Producto.hasMany(models.Comentario,{
+                        Producto.hasMany(models.Comentario,{
                         as:"Comentario",
                         foreingKey:"id_usuario"
                 
                      })
                  };
         
-    return Producto;
-}
+                        return Producto;
+                    }
