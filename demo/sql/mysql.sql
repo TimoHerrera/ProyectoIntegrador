@@ -3,36 +3,38 @@ use proyectointegrador;
 
 CREATE TABLE usuarios (
 id_usuario			INT				UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-usuario_nombre  	VARCHAR(100)	NOT NULL UNIQUE,
+nombre  	        VARCHAR(100)	NOT NULL UNIQUE,
 email				VARCHAR(100)	NOT NULL UNIQUE,
 pssword				VARCHAR(500)	NOT NULL,
-fotoPerfil			VARCHAR(100)	NOT NULL,
+foto_perfil			VARCHAR(100)	NOT NULL,
 fecha				DATE			NOT NULL,
 dni					INT				NOT NULL UNIQUE,
-createdAt							TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updatedAt							TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+created_at							TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at							TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 
 CREATE TABLE productos (
 id_producto					INT					UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-nombreProducto				VARCHAR(100)   		NOT NULL,
-descripcionProducto			TEXT                NOT NULL,
+nombre_producto				VARCHAR(100)   		NOT NULL,
+descripcion_producto			TEXT            NOT NULL,
 id_usuario					INT 				UNSIGNED,                   
 FOREIGN KEY (id_usuario)	REFERENCES usuarios(id_usuario),
-createdAt                  						TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updatedAt          								TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+created_at                						TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at          								TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 
 CREATE TABLE comentarios(
 id_posteo      INT				UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 comentario     TEXT             NOT NULL,
-id_usuario     INT				UNSIGNED,                     
+id_usuario     INT				UNSIGNED,        
+id_producto 	INT  			UNSIGNED,           
 FOREIGN KEY (id_usuario)		REFERENCES usuarios(id_usuario), 
+FOREIGN KEY (id_producto)		REFERENCES productos(id_producto),
 
-createdAt                       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updatedAt          				TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+created_at                       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at          				TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 
