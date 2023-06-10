@@ -63,7 +63,11 @@
                     console.log(pass);
                     let clavecorrecta= bcrypt.compareSync(pass, result.pssword)
                     if (clavecorrecta) {
-
+                        req.session.user = result; //user se lo puse yo, gurdo en la prop creada user lo que viene de result
+                        if(req.body.recordarme != undefined){
+                            res.cookie('userId', result.id_usuario, {maxage:1000*60*15})//1 parametro, como quiero que se llame la cookie, el puso result.idyo puse id_usuario pq es como esta en el modelo
+                            }
+                            
                         return res.redirect('/')
 
                     } else {
