@@ -40,14 +40,14 @@ module.exports = function(sequelize, dataTypes) {
              Producto.associate = function(models) {
                  // pertenece a
                         Producto.belongsTo(models.Usuario,{
-                         as:"Usuario", //es con el alias
-                         foreingKey:"id_usuario"
-                     } ),
+                            as:"usuarios", //es con el alias
+                            foreignKey:"id_usuario"
+                        } ),
                         Producto.hasMany(models.Comentario,{
-                        as:"Comentario",
-                        foreingKey:"id_producto"
-                
-                     })
+                            as:"comentarios",
+                            foreignKey:"id_producto"
+                    
+                        })
                  };
         
                         return Producto;

@@ -1,5 +1,6 @@
 
-const db = require('../database/models') //requiero mis modelos
+const db = require('../database/models'); //requiero mis modelos
+const { result } = require('./indexController');
 const producttos = db.Producto; //producto es el alias de mi tabla
 let op = db.Sequelize.Op; 
 
@@ -13,6 +14,7 @@ const productController = {
             console.log(err);
         });
     },
+    
     show: function (req,res) {//voy a filtrar por pk
     let id = req.params.id; //capturo el id a travez de la url
 
@@ -33,6 +35,7 @@ const productController = {
         console.log(error);
     });
     },
+    
     Sresultado: function (req,res) {//BUSCADOR
     let buscar = req.query.search;        //esta bien la query
     
@@ -41,19 +44,29 @@ const productController = {
            nombre:{[op.like]:"%" + buscar + "%"} //si hay error esta en la vista, porque aca esta todo bien
         }]
     })
-    .then(function(result){
-        res.render('sResults',{productos: result})//bien 
-    })
-    .catch(function(error){
-            console.log(error)
-    });
-    },
+        .then(function(result){
+            res.render('sResults',{productos: result})//bien 
+        })
+        .catch(function(error){
+                console.log(error)
+        });
+        },
+    
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addproduct')//esta bien el sufijo?
+        return res.render('addProduct')//esta bien el sufijo?
     },
+    
     store: function (req,res){
-
+        let info = req.body;
+        console.log(info);
+        producttos.create(info)
+        .then((result) => {
+            return res.redirect("/")
+        }).catch((error) => {
+            return console.log(error);
+        });
+        //return res.redirect("/")
     }
 };
 

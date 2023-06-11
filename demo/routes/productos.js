@@ -7,19 +7,21 @@ var router = express.Router();
 // router.get (`/addProduct`,productController.add);
 // router.get (`/sResults`,productController.busqueda);  
 
-const productController = require(`../controllers/productcontroller`);
+const productController = require(`../controllers/productController`);
 //get productos listing
-router.get('/index',productController.findAll);//no es /productos puse/ index pq es donde me muestra todos lo productos
+router.get('/', productController.findAll);//no es /productos puse/ index pq es donde me muestra todos lo productos. 
 
 //find by pk
 router.get('/prodDetail/:id', productController.show);//esta bien el sufijo, sino es /:id
 
 //ejemplo de buscador
-router.get('/sResults',productController.Sresultado);// no se bien el sufijo
+router.get('/sResults', productController.Sresultado);// no se bien el sufijo
 
 //mostrar form moivies (mostrar el form para que agregue una pelicula)
 router.get('/addProduct', productController.showForm) //el sufijo es el de la pagina donde me permite agregar un prod
 //guardar el form de movie
 
-router.post('addProduct', productController.store)
-module.exports=router;
+router.post('/addProduct', productController.store)
+
+
+module.exports = router;

@@ -8,7 +8,7 @@ let session = require('express-session');
 const db = require('./database/models')
 
 var indexRouter = require('./routes/index');
-var productsRouter = require(`./routes/productos`); //obtiene la indo de products.js
+var productsRouter = require(`./routes/productos`); //obtiene la info de products.js
 var usuarioRouter = require(`./routes/usuario`); //obtiene la info de usuario.js
 
 
@@ -66,8 +66,8 @@ app.use(function(req,res,next){
 
 
 app.use('/', indexRouter);
-app.use('/productos', productsRouter); //lo conecto con producstouter
-app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
+app.use('/productos', productsRouter); //lo conecto con productsRouter
+app.use('/usuario', usuarioRouter);//lo conecto a usuarioRouter
 
 
 
