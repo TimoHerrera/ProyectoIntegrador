@@ -52,5 +52,10 @@
 
                 </nav>
             </div>
+            <% if (locals.user != undefined) { %>
+             <p>Bienvenido <%=locals.user.nombre%></p> 
+            <% } %>
+                
         </header>
+        <!-- estoy casi segura que va nombre despues de user. -->
 
