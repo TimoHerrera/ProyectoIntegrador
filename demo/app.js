@@ -7,11 +7,7 @@ let session = require('express-session');
 
 const db = require('./database/models')
 
-<<<<<<< HEAD
-var indexRouter = require('./routes/index');
-=======
 //var indexRouter = require('./routes/productos');
->>>>>>> 668c6f66e4055327691b4a3157f4d61547cc7809
 var productsRouter = require(`./routes/productos`); //obtiene la info de products.js
 var usuarioRouter = require(`./routes/usuario`); //obtiene la info de usuario.js
 
