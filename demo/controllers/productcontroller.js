@@ -1,12 +1,6 @@
 
-<<<<<<< HEAD
-const db = require('../database/models'); //requiero mis modelos
-const { result } = require('./indexController');
-const producttos = db.Producto; //producto es el alias de mi tabla
-=======
 const db = require('../database/models') //requiero mis modelos
 const producttos = db.Producto; //Producto es el alias de mi tabla
->>>>>>> 668c6f66e4055327691b4a3157f4d61547cc7809
 let op = db.Sequelize.Op; 
 
 const productController = {
