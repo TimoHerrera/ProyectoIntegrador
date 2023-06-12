@@ -59,8 +59,13 @@ const productController = {
     
     store: function (req,res){
         let info = req.body;
-        console.log(info);
-        producttos.create(info)
+        let productoSave = {
+            nombre_producto:info.nombre,
+            descripcion_producto:info.descripcion,
+            precio:info.precio,
+        }
+        //console.log(info);
+        producttos.create(productoSave)
         .then((result) => {
             return res.redirect("/")
         }).catch((error) => {

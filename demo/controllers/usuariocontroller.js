@@ -28,7 +28,7 @@
             email:info.email,
             pssword:bcrypt.hashSync(info.pssword, 10),
             fecha:info.fecha_nacimiento,
-            dni : info.documento
+            dni:info.documento
         }
         console.log(ussuarioSave);
         ussuarios.create(ussuarioSave)
