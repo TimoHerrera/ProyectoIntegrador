@@ -17,6 +17,9 @@ module.exports = function(sequelize, dataTypes) {
         descripcion_producto:{
             type: dataTypes.STRING,
         },
+        precio:{
+            type: dataTypes.DECIMAL,
+        },
         id_usuario:{
             type: dataTypes.INTEGER,
         },
