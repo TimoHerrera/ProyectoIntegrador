@@ -39,6 +39,7 @@ module.exports = function(sequelize, dataTypes) {
     // creo las relaciones 
              Producto.associate = function(models) {
                  // pertenece a
+<<<<<<< HEAD
                         Producto.belongsTo(models.Usuario,{
                             as:"usuarios", //es con el alias
                             foreignKey:"id_usuario"
@@ -48,6 +49,17 @@ module.exports = function(sequelize, dataTypes) {
                             foreignKey:"id_producto"
                     
                         })
+=======
+                         Producto.belongsTo(models.Usuario,{
+                         as:"Usuario", //es con el alias
+                         foreignKey:"id_usuario"
+                     } ),
+                     Producto.hasMany(models.Comentario,{
+                        as:"Comentario",
+                        foreignKey:"id_producto"
+                
+                     })
+>>>>>>> 668c6f66e4055327691b4a3157f4d61547cc7809
                  };
         
                         return Producto;

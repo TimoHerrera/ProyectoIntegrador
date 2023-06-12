@@ -1,7 +1,12 @@
 
+<<<<<<< HEAD
 const db = require('../database/models'); //requiero mis modelos
 const { result } = require('./indexController');
 const producttos = db.Producto; //producto es el alias de mi tabla
+=======
+const db = require('../database/models') //requiero mis modelos
+const producttos = db.Producto; //Producto es el alias de mi tabla
+>>>>>>> 668c6f66e4055327691b4a3157f4d61547cc7809
 let op = db.Sequelize.Op; 
 
 const productController = {
@@ -9,6 +14,7 @@ const productController = {
 
         producttos.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
+            return res.send(result)
             return res.render("index", {productos: result}); //productos sale de la vista!
         }).catch(function (err){
             console.log(err);
@@ -19,15 +25,8 @@ const productController = {
     let id = req.params.id; //capturo el id a travez de la url
 
     // creo relaciones entre los productos y los usuarios que estarian en los productos
-    let rel={
-        include:[
-            {
-                association: "Comentario", includes:[{association:"Comentario"}]
-            }
-        ]
-    };
 
-    producttos.findByPk(id, rel)
+    producttos.findByPk(id)
     .then(function(result){
         return res.render('prodDetail',{productos: result})
     })
@@ -41,7 +40,8 @@ const productController = {
     
     producttos.findAll({
         where: [{
-           nombre:{[op.like]:"%" + buscar + "%"} //si hay error esta en la vista, porque aca esta todo bien
+           nombre:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
+            order:[['created_at', 'DESC'] ]
         }]
     })
         .then(function(result){
