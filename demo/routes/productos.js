@@ -10,7 +10,7 @@ const productController = require(`../controllers/productcontroller`);
 
 
 //get productos listing
-router.get('/',productController.findAll);//sino es /index
+router.get('/',productController.findAll);
 
 //find by pk
 router.get('/prodDetail/:id', productController.show);

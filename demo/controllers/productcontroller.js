@@ -1,6 +1,6 @@
 
 const db = require('../database/models') //requiero mis modelos
-const producttos = db.Producto; //producto es el alias de mi tabla
+const producttos = db.Producto; //Producto es el alias de mi tabla
 let op = db.Sequelize.Op; 
 
 const productController = {
@@ -17,15 +17,8 @@ const productController = {
     let id = req.params.id; //capturo el id a travez de la url
 
     // creo relaciones entre los productos y los usuarios que estarian en los productos
-    let rel={
-        include:[
-            {
-                association: "Comentario", includes:[{association:"Comentario"}]
-            }
-        ]
-    };
 
-    producttos.findByPk(id, rel)
+    producttos.findByPk(id)
     .then(function(result){
         return res.render('prodDetail',{productos: result})
     })
@@ -51,7 +44,7 @@ const productController = {
     },
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addproduct')//esta bien el sufijo?
+        return res.render('addproduct')
     },
     store: function (req,res){
 
