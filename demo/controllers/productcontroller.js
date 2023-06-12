@@ -8,7 +8,7 @@ const productController = {
 
         producttos.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
-            return res.send(result)
+            //return res.send(result)
             return res.render("index", {productos: result}); //productos sale de la vista!
         }).catch(function (err){
             console.log(err);
@@ -32,7 +32,7 @@ const productController = {
     
     producttos.findAll({
         where: [{
-           nombre:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
+            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
             order:[['created_at', 'DESC'] ]
         }]
     })
