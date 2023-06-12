@@ -7,8 +7,8 @@ let session = require('express-session');
 
 const db = require('./database/models')
 
-var indexRouter = require('./routes/index');
-var productsRouter = require(`./routes/productos`); //obtiene la indo de products.js
+//var indexRouter = require('./routes/productos');
+var productsRouter = require(`./routes/productos`); //obtiene la info de products.js
 var usuarioRouter = require(`./routes/usuario`); //obtiene la info de usuario.js
 
 
@@ -35,7 +35,10 @@ app.use(function(req,res,next){
 //paso la info de session para locals
   if(req.session.user != undefined){
     res.locals.user = req.session.user //le pase a locals la info de user
+<<<<<<< HEAD
     
+=======
+>>>>>>> de4871a5b65e61dca54311fd0442d3ce301edd47
 }
     return next();
 });
@@ -65,7 +68,7 @@ app.use(function(req,res,next){
   
 
 
-app.use('/', indexRouter);
+app.use('/', productsRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
 

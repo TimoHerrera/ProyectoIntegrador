@@ -41,11 +41,11 @@ module.exports = function(sequelize, dataTypes) {
                  // pertenece a
                          Producto.belongsTo(models.Usuario,{
                          as:"Usuario", //es con el alias
-                         foreingKey:"id_usuario"
+                         foreignKey:"id_usuario"
                      } ),
                      Producto.hasMany(models.Comentario,{
                         as:"Comentario",
-                        foreingKey:"id_producto"
+                        foreignKey:"id_producto"
                 
                      })
                  };

@@ -1,6 +1,6 @@
 
 const db = require('../database/models') //requiero mis modelos
-const producttos = db.Producto; //producto es el alias de mi tabla
+const producttos = db.Producto; //Producto es el alias de mi tabla
 let op = db.Sequelize.Op; 
 
 const productController = {
@@ -19,7 +19,9 @@ const productController = {
 //crear las relaciones al final!!
 
 
-    producttos.findByPk(id, rel)
+    // creo relaciones entre los productos y los usuarios que estarian en los productos
+
+    producttos.findByPk(id)
     .then(function(result){
         return res.render('prodDetail',{productos: result})
     })
@@ -32,7 +34,8 @@ const productController = {
     
     producttos.findAll({
         where: [{
-           nombre:{[op.like]:"%" + buscar + "%"} //si hay error esta en la vista, porque aca esta todo bien
+           nombre:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
+            order:[['created_at', 'DESC'] ]
         }]
     })
     .then(function(result){
@@ -44,7 +47,7 @@ const productController = {
     },
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addproduct')//esta bien el sufijo?
+        return res.render('addproduct')
     },
     store: function (req,res){
 
@@ -60,29 +63,3 @@ module.exports = productController;
 
 
 
-//const data = require("../db/modulo");
-// const productController= {
-
-//     detail: function(req, res){
-//        let id = req.params.id;
-//        let resultado = null;
-//        for (let i = 0; i < data.productos.length; i++) {     
-//         if (id == data.productos[i].id) {
-//             resultado = data.productos[i]
-            
-//         }
-//        }
-//        return res.render("prodDetail",{productos:resultado, usuario:data.usuario, comentarios:data.comentarios})
-//     },
-    
-//     add: function(req, res){
-//         return res.render("addProduct", {usuario:data.usuario})
-//     },
-
-//     busqueda: function (req, res) {
-//         return res.render("sResults", {productos:data.productos, usuario:data.usuario});
-//       },
-
-// }
-
-//module.exports = productController
