@@ -8,6 +8,7 @@ const productController = {
 
         producttos.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
+            return res.send(result)
             return res.render("index", {productos: result}); //productos sale de la vista!
         }).catch(function (err){
             console.log(err);
