@@ -28,7 +28,7 @@
             email:info.email,
             pssword:bcrypt.hashSync(info.pssword, 10),
             fecha:info.fecha_nacimiento,
-            dni : info.documento
+            dni:info.documento
         }
         console.log(ussuarioSave);
         ussuarios.create(ussuarioSave)
@@ -58,7 +58,7 @@
             .then ((result)=>{
 
                 if (result != null) {
-                    let pass = req.body.pssword;
+                   // let pass = req.body.pssword;
                     console.log(result.pssword);
                     console.log(pass);
                     let clavecorrecta= bcrypt.compareSync(pass, result.pssword)

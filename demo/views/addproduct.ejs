@@ -12,7 +12,7 @@
                         <h2 class="products-title">Agregar productos</h2>
                     </div>
         
-                    <form method="GET" action="/products">
+                    <form method="POST" action="/producto/addProduct">
                                 
                                 
                                 <label class="form-label">Nombre</label>
@@ -25,7 +25,7 @@
         
                                 
                                 <label class="form-label">Precio</label>
-                                <input type="text" name="precio" class="form-input">
+                                <input type="number" name="precio" class="form-input">
                                 
         
                                 
@@ -36,7 +36,7 @@
                                 <input type="date" name="fecha" class="form-input">
                             
                                 
-                                <button type="submit" class="form-input">Agregar producto</button>
+                                <button type="submit" action="/" class="form-input">Agregar producto</button>
                             </form>
                     <!-- Show the "ultimos" products -->
                     <h2 class="col-12"> </h2>

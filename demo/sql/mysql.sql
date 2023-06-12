@@ -18,6 +18,7 @@ CREATE TABLE productos (
 id_producto					INT					UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre_producto				VARCHAR(100)   		NOT NULL,
 descripcion_producto			TEXT            NOT NULL,
+precio                      DECIMAL             UNSIGNED NOT NULL,
 id_usuario					INT 				UNSIGNED,                   
 FOREIGN KEY (id_usuario)	REFERENCES usuarios(id_usuario),
 created_at                						TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
