@@ -38,7 +38,8 @@ const productController = {
     
     producttos.findAll({
         where: [{
-           nombre:{[op.like]:"%" + buscar + "%"} //si hay error esta en la vista, porque aca esta todo bien
+           nombre:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
+            order:[['created_at', 'DESC'] ]
         }]
     })
     .then(function(result){
