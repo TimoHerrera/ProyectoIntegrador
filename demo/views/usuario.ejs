@@ -1,7 +1,10 @@
 <%-include('./partials/head') %> 
        
-<%-include('./partials/header') %>
-
+<% if (locals.user != undefined) { %>
+    <%- include('./partials/headerLogeado')  %> 
+  <% }else {%>
+    <%- include('./partials/Header')  %> 
+  <% } %> 
 
         <% for (let i=0; i< usuario.length; i++)  {%>
         <section class="info-usuario container products-wrapper">

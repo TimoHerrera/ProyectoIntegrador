@@ -35,10 +35,7 @@ app.use(function(req,res,next){
 //paso la info de session para locals
   if(req.session.user != undefined){
     res.locals.user = req.session.user //le pase a locals la info de user
-<<<<<<< HEAD
     
-=======
->>>>>>> de4871a5b65e61dca54311fd0442d3ce301edd47
 }
     return next();
 });

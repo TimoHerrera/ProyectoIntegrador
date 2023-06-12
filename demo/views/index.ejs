@@ -1,8 +1,10 @@
 <%-include('./partials/head') %>        
         
-<%-include('./partials/header') %>
-
-
+<% if (locals.user != undefined) { %>
+  <%- include('./partials/headerLogeado')  %> 
+<% }else {%>
+  <%- include('./partials/Header')  %> 
+<% } %> 
 
 <div class="banner">
     <img src="/imagenes/bannerr.png" alt="bannerDeDescuentos"/> 
