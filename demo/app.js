@@ -10,6 +10,7 @@ const db = require('./database/models')
 //var indexRouter = require('./routes/productos');
 var productsRouter = require(`./routes/productos`); //obtiene la info de products.js
 var usuarioRouter = require(`./routes/usuario`); //obtiene la info de usuario.js
+//var comentarioRouter = require(`./routes/comentarios`);
 
 
 var app = express();
@@ -64,7 +65,9 @@ app.use(function(req,res,next){
 app.use('/', productsRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
-app.use('/prodDetail/:id',productsRouter);
+//app.use('/prodDetail',comentarioRouter);
+
+
 
 
 // catch 404 and forward to error handler
