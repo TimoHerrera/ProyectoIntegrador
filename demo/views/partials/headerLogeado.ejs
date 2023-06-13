@@ -30,9 +30,13 @@
         
                 <nav class="main-navbar">
                     <ul class="left-navbar">
+                        
                         <% if (locals.user != undefined) { %>
-                            <p>Bienvenido <%=locals.user.nombre%></p> 
+                            <p><a href="/usuario/:id">Bienvenido <%=locals.user.nombre%></a></p> 
                            <% } %>
+                         
+                           <a href="/usuario/logout"  type="submit">Cerrar Sesión <i class="fas fa-sign-in-alt"></i></a>
+                          
                     </ul>
         
                     <ul class="right-navbar">

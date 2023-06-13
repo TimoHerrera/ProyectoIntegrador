@@ -71,8 +71,8 @@ const UsuarioController = {
 
                     if (clavecorrecta) {
 
-                        req.session.user = result.dataValues; //user se lo puse yo, gurdo en la prop creada user lo que viene de result
-                        if (req.body.recordarme != undefined) {
+                     req.session.user = result.dataValues; //user se lo puse yo, gurdo en la prop creada user lo que viene de result
+                    if (req.body.recordarme != undefined) {
                             res.cookie('userId', result.id_usuario, { maxage: 1000 * 60 * 15 })//1 parametro, como quiero que se llame la cookie, el puso result.idyo puse id_usuario pq es como esta en el modelo
                         }
                         console.log("login completed")
@@ -95,12 +95,12 @@ const UsuarioController = {
         
 
     },
-    // logout: function(req,res) {
-    //     req.session.destroy();
-    //     res.clearCookie('userId');
-    //     return res.redirect('/')
+    logout: function(req,res) {
+        req.session.destroy();
+        res.clearCookie('userId');
+        return res.redirect('/')
         
-    // },
+    },
 
     profile: function (req,res) {
     let idSolicitado= req.params.id
@@ -111,7 +111,24 @@ const UsuarioController = {
             {association: 'comentario'}
     ]
     }
- },
+
+    perfilUsuario.findByPk (idSolicitado,relations)
+    .then ((result)  => { 
+            let infoUser={
+                id: result.id_usuario,
+                nombre:result.nombre,
+                email:result.email,
+                pssword:result.pssword,
+                fecha_nacimiento:result.fecha,
+                dni:result.dni,
+                created_at:result.created_at,
+            }
+        return res.render('usuario', {infoUser: infoUser})
+        })
+     .catch((err) => {
+            return console.log('El error es: ' + err)
+        });
+    }, //cierra el profile en general
 };
 module.exports = UsuarioController;
 
