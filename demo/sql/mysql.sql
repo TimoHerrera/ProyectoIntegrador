@@ -18,6 +18,7 @@ CREATE TABLE productos (
 id_producto					INT					UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre_producto				VARCHAR(100)   		NOT NULL,
 descripcion_producto			TEXT            NOT NULL,
+precio                      DECIMAL             UNSIGNED NOT NULL,
 id_usuario					INT 				UNSIGNED,                   
 FOREIGN KEY (id_usuario)	REFERENCES usuarios(id_usuario),
 created_at                						TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -39,11 +40,11 @@ updated_at          				TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TI
 
 
 -- insertar 5 usuarios a la tabla usuario
-insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,created_at,updated_at) values (default, 'paula.rodriguez@gmail.com', 'pau123_','../imagenes/paula.jpeg','2023-04-02','33849746', default,default );
-insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,created_at,updated_at) values (default, 'pablo.aguilar@gmail.com','woxbjshy_1','../imagenes/paula.jpeg','2023-04-03','20837625',default, default);
-insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,created_at,updated_at) values (default,'enriquerico@gmail.com', 'erico14_', '../imagenes/paula.jpeg','2023-04-04','17845634', default,default);
-insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,created_at,updated_at) values (default,'erica.esteves@hotmail.com','ebdosucbdo098', '../imagenes/paula.jpeg', '2023-04-05','45678645', default,default);
-insert into usuarios (id_usuario,email,pssword,fotoPerfil,fecha,dni,created_at,updated_at) values (default,'micaela_zazzuolo@hotmail.com','mZazzu345','../imagenes/paula.jpeg', '2023-04-06','19356789', default, default);
+insert into usuarios (id_usuario,nombre,email,pssword,foto_perfil,fecha,dni,created_at,updated_at) values (default,"paula", 'paula.rodriguez@gmail.com', 'pau123_','../imagenes/paula.jpeg','2023-04-02','33849746', default,default );
+insert into usuarios (id_usuario,nombre,email,pssword,foto_perfil,fecha,dni,created_at,updated_at) values (default,"pablo", 'pablo.aguilar@gmail.com','woxbjshy_1','../imagenes/paula.jpeg','2023-04-03','20837625',default, default);
+insert into usuarios (id_usuario,nombre,email,pssword,foto_perfil,fecha,dni,created_at,updated_at) values (default,"erique",'enriquerico@gmail.com', 'erico14_', '../imagenes/paula.jpeg','2023-04-04','17845634', default,default);
+insert into usuarios (id_usuario,nombre,email,pssword,foto_perfil,fecha,dni,created_at,updated_at) values (default,"erica",'erica.esteves@hotmail.com','ebdosucbdo098', '../imagenes/paula.jpeg', '2023-04-05','45678645', default,default);
+insert into usuarios (id_usuario,nombre,email,pssword,foto_perfil,fecha,dni,created_at,updated_at) values (default,"micaela",'micaela_zazzuolo@hotmail.com','mZazzu345','../imagenes/paula.jpeg', '2023-04-06','19356789', default, default);
 
 -- insertar 10 posteos
 insert into productos (id_producto,nombre_producto,descripcion_producto,id_usuario,created_at,updated_at) values (default,'Conjunto 3 Tiras Aeroready Essentials Corte Clásico','Sin importar cómo lo usés, la tecnología AEROREADY se encarga de mantener tu cuerpo seco y cómodo de la mañana a la noche',default,default,default);

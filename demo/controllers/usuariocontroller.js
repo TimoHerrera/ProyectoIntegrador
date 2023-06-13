@@ -29,6 +29,7 @@ const UsuarioController = {
             pssword: bcrypt.hashSync(info.pssword, 10),
             fecha: info.fecha_nacimiento,
             dni: info.documento
+
         }
         console.log(ussuarioSave);
         ussuarios.create(ussuarioSave)
@@ -52,6 +53,7 @@ const UsuarioController = {
             where: [{ email: emailBuscado }]
         };
 
+
         ussuarios.findOne(filtrado)
             .then((result) => {
 
@@ -60,6 +62,13 @@ const UsuarioController = {
                     // console.log(result.pssword);
                     // console.log(pass);
                     let clavecorrecta = bcrypt.compareSync(pass, result.pssword)
+
+                if (result != null) {
+                   // let pass = req.body.pssword;
+                    console.log(result.pssword);
+                    console.log(pass);
+                    let clavecorrecta= bcrypt.compareSync(pass, result.pssword)
+
                     if (clavecorrecta) {
 
                         req.session.user = result.dataValues; //user se lo puse yo, gurdo en la prop creada user lo que viene de result
@@ -78,10 +87,12 @@ const UsuarioController = {
                     return res.send("Usuario inexistente")
                 }
 
-
+            }
             }).catch((error) => {
                 console.log(error);
             });
+        
+        
 
     },
     // logout: function(req,res) {
@@ -91,12 +102,16 @@ const UsuarioController = {
         
     // },
 
-//     profile: function (req,res) {
-//     let idSolicitado= req.params.id
-//     let relations = {
-//         include
-//     }
-//  },
+    profile: function (req,res) {
+    let idSolicitado= req.params.id
+    let relations = {
+        include: [
+            {association: 'producto',
+               include:['comentario']},
+            {association: 'comentario'}
+    ]
+    }
+ },
 };
 module.exports = UsuarioController;
 
