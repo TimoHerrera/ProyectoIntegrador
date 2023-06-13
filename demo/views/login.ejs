@@ -20,11 +20,11 @@
 
 
 	<!-- login formulario -->
-	<div class="container products-wrapper">
-		<div class="row">
+	
+		
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
-			</div>
+			
 				<form action="/usuario/login" method="post">	
 					<label>Correo electronico </label>
 					<input id="email" class="input" type="email" name="email" placeholder="email" />
@@ -34,7 +34,7 @@
 		
 					<label>Contraseña: </label>
 
-					<input type="password" name="contraseña" value=""> recordarme?
+					<input type="password" name="pssword"  />
 					<br>
 					<br>
 						
@@ -42,17 +42,12 @@
 					<input type="checkbox" name="recordarme" id="recordarme">
 					<br>
 					<br>
-					<input type="password" name="pssword"  />
-					<br>
-					<br>
-						
-					<!-- <label>Recordarme: </label>
-					<input type="checkbox" name="recordarme" value="">
-					<br> -->
 					
 
 		
 					<button type="submit" >Enviar</button>
 				</form>
-
+			</div>
+		
+	
 <%-include('./partials/footer') %>

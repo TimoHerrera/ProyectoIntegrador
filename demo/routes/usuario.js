@@ -15,4 +15,10 @@ router.post('/register', UsuarioController.store);
 router.get('/login', UsuarioController.login );
 router.post('/login', UsuarioController.loginPost);
 
+router.get('/logout', UsuarioController.logout);
+
+// Usuario sigue sin funcionar
+router.get('/usuario/:id', UsuarioController.profile);
+
+
 module.exports=router;

@@ -18,6 +18,9 @@ const productController = {
     show: function (req,res) {//voy a filtrar por pk
     let id = req.params.id; //capturo el id a travez de la url
 
+//crear las relaciones al final!!
+
+
     // creo relaciones entre los productos y los usuarios que estarian en los productos
         producttos.findByPk(id)
         .then(function(result){
@@ -82,29 +85,3 @@ module.exports = productController;
 
 
 
-//const data = require("../db/modulo");
-// const productController= {
-
-//     detail: function(req, res){
-//        let id = req.params.id;
-//        let resultado = null;
-//        for (let i = 0; i < data.productos.length; i++) {     
-//         if (id == data.productos[i].id) {
-//             resultado = data.productos[i]
-            
-//         }
-//        }
-//        return res.render("prodDetail",{productos:resultado, usuario:data.usuario, comentarios:data.comentarios})
-//     },
-    
-//     add: function(req, res){
-//         return res.render("addProduct", {usuario:data.usuario})
-//     },
-
-//     busqueda: function (req, res) {
-//         return res.render("sResults", {productos:data.productos, usuario:data.usuario});
-//       },
-
-// }
-
-//module.exports = productController

@@ -36,6 +36,7 @@ app.use(function(req,res,next){
 //paso la info de session para locals
   if(req.session.user != undefined){
     res.locals.user = req.session.user //le pase a locals la info de user
+    
 }
     return next();
 });
@@ -46,10 +47,10 @@ app.use(function(req,res,next){
   if (req.cookies.userId != undefined && req.session.user == undefined){//.user lo cree en la linea 35
     let idUsuarioEnCookie = req.cookies.userId;
     db.Usuario.findByPk(idUsuarioEnCookie)
-    .then(function (user) {
+    .then(function (result) {
       
-    req.session.user = user.dataValues;
-    res.locals.user = user.dataValues;
+    req.session.user = result.dataValues;
+    res.locals.user = result.dataValues;
     return next();
   
   }).catch(function (err){
@@ -65,9 +66,7 @@ app.use(function(req,res,next){
 app.use('/', productsRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
-//app.use('/prodDetail',comentarioRouter);
-
-
+//app.use('/prodDetail/:id',productsRouter);
 
 
 // catch 404 and forward to error handler

@@ -1,8 +1,11 @@
 <%-include('./partials/head') %>
         
         
-<%-include('./partials/header') %>
-
+<% if (locals.user != undefined) { %>
+    <%- include('./partials/headerLogeado')  %> 
+  <% }else {%>
+    <%- include('./partials/Header')  %> 
+  <% } %> 
         <body>
             
             <!-- Novedades -->
@@ -12,7 +15,7 @@
                         <h2 class="products-title">Agregar productos</h2>
                     </div>
         
-                    <form method="POST" action="/producto/addProduct">
+                             <form method="POST" action="/producto/addProduct">
                                 
                                 
                                 <label class="form-label">Nombre</label>
