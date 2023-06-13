@@ -13,6 +13,9 @@ module.exports = function (sequelize,dataTypes) {
         id_usuario:{
             type: dataTypes.INTEGER,//que pongo cuando es una foreign key
         },
+        id_producto:{
+            type: dataTypes.INTEGER,
+        },
         created_at:{
             type: dataTypes.DATE,
         },

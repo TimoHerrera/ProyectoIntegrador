@@ -21,9 +21,9 @@ module.exports = function(sequelize, dataTypes) {
         pssword:{
             type: dataTypes.STRING,
         },
-        foto_perfil:{
-            type: dataTypes.STRING,
-        },
+        //foto_perfil:{
+        //    type: dataTypes.STRING,
+        //},
         fecha:{
             type: dataTypes.DATE,
         },

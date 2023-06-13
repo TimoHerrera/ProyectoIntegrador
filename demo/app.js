@@ -65,6 +65,7 @@ app.use(function(req,res,next){
 app.use('/', productsRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
+app.use('/prodDetail/:id',productsRouter);
 
 
 // catch 404 and forward to error handler
