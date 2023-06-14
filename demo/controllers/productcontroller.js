@@ -51,12 +51,8 @@ const productController = {
         }
     })
         .then(function(result){
-            if (result.length > 0){
-                return res.render('sResults',{productos: result});
-            } 
-            else {
-                return res.send("No encontramos resultados a su busqueda")
-            } 
+            //return res.send(result)
+            return res.render('sResults',{productos: result});
         })
         .catch(function(error){
                 console.log(error)
