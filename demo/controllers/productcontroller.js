@@ -66,7 +66,7 @@ const productController = {
     
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addProduct')//esta bien el sufijo?
+        return res.render('addproduct')//esta bien el sufijo?
     },
     
     store: function (req,res){
@@ -75,11 +75,13 @@ const productController = {
             nombre_producto:info.nombre,
             descripcion_producto:info.descripcion,
             precio:info.precio,
+            imagen_producto: info.imagen_producto,
+            id_usuario: req.session.user.id
         }
         //console.log(info);
         producttos.create(productoSave)
         .then((result) => {
-            return res.redirect("/")
+            return res.redirect("/usuario/perfil/"+ req.session.user.id_usuario)
         }).catch((error) => {
             return console.log(error);
         });

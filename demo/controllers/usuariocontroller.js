@@ -103,27 +103,27 @@ const UsuarioController = {
     },
 
     profile: function (req,res) {
-    let idSolicitado= req.params.id
+    let idSolicitado= req.params.id 
     let relations = {
         include: [
-            {association: 'producto',
-               include:['comentario']},
-            {association: 'comentario'}
+            {association: 'Producto'},
+            {association: 'Comentario'}
     ]
     }
 
-    perfilUsuario.findByPk (idSolicitado,relations)
+    ussuarios.findByPk (idSolicitado,relations)
     .then ((result)  => { 
-            let infoUser={
+/*             let infoUser={
                 id: result.id_usuario,
                 nombre:result.nombre,
                 email:result.email,
-                pssword:result.pssword,
+                password:result.pssword,
                 fecha_nacimiento:result.fecha,
                 dni:result.dni,
                 created_at:result.created_at,
-            }
-        return res.render('usuario', {infoUser: infoUser})
+            } */
+        console.log(result);
+        return res.render('usuario', {infoUser: result})
         })
      .catch((err) => {
             return console.log('El error es: ' + err)
