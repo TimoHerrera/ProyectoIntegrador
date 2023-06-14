@@ -45,7 +45,7 @@ const productController = {
         where: {
             [op.or]: [
                 {nombre_producto: {[op.like]: "%" + buscar + "%"}},
-                //order:[['created_at', 'DESC'] ]
+                //{order:[['created_at', 'DESC'] ]}
             
             ]
         }
