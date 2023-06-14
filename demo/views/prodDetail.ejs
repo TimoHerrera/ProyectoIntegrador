@@ -24,22 +24,6 @@
 					</p>
 				</article>
 
-						<div class="col-12 col-lg-4">
-							<section class="comments">
-								<% for (let i=0; i<comentarios.length; i++) {%>
-									<article class="comm">
-										<img src="<%= comentarios[i].comentimg %>" alt="productos.comentarios[i].usuario" />
-										<div class="data">
-											<p class="user">
-											<strong> <a href="/usuario"><%= usuario.nombre%> </a> 
-											</strong>
-											<%= comentarios[i].comentario%>
-											</p>
-										</div>
-									</article>
-							<% }%>
-							</section>
-						</div>	
 			</div>	
 		</div>              
 		<section class="addComm">
