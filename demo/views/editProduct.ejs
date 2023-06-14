@@ -1,0 +1,82 @@
+<%-include('./partials/head') %>
+        
+        
+<% if (locals.user != undefined) { %>
+    <%- include('./partials/headerLogeado')  %> 
+  <% }else {%>
+    <%- include('./partials/Header')  %> 
+  <% } %> 
+        <body>
+            
+            <!-- Novedades -->
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">Editar producto</h2>
+                    </div>
+        
+                             <form method="POST" action="/producto/editProduct">
+                                
+                                
+                                <label class="form-label">Nombre</label>
+                                <input type="text" name="nombre" placeholder="Sillon X" class="form-input">
+                            
+                                
+                                <label class="form-label">Descripción</label>
+                                <input type="text" name="descripcion" class="form-input">
+                                
+        
+                                
+                                <label class="form-label">Precio</label>
+                                <input type="number" name="precio" class="form-input">
+                                
+        
+                                
+                                <label class="form-label">Imagén</label>
+                                <input type="file" name="imagen" class="form-input">
+
+                                <label class="form-label">Fecha</label>
+                                <input type="date" name="fecha" class="form-input">
+                            
+                                
+                                <button type="submit" action="/" class="form-input">Guardar cambios</button>
+                            </form>
+                    <!-- Show the "ultimos" products -->
+                    <h2 class="col-12"> </h2>
+        
+        
+           
+        </body>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <article class="footer-data">
+                            <i class="fas fa-credit-card"></i>
+                            <h2>Pagá con tarjeta o en efectivo</h2>
+                            <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
+                                siempre es seguro!</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="footer-data">
+                            <i class="fas fa-gift"></i>
+                            <h2>Envío gratis desde $ 1.999</h2>
+                            <p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un
+                                beneficio de Mercado Puntos.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="footer-data">
+                            <i class="fas fa-user-shield"></i>
+                            <h2>Seguridad, de principio a fin</h2>
+                            <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás
+                                siempre protegido.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>

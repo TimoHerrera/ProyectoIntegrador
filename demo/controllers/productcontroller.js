@@ -23,7 +23,7 @@ const productController = {
     
     show: function (req,res) {//voy a filtrar por pk
     let id = req.params.id; //capturo el id a travez de la url
-
+   
     // creo relaciones entre los productos y los usuarios que estarian en los productos
         producttos.findByPk(id)
         .then(function(result){
@@ -76,7 +76,13 @@ const productController = {
             return console.log(error);
         });
         //return res.redirect("/")
+    },
+
+    update: function(req,res){
+        producttos
     }
+
+
 };
 
 module.exports = productController;
