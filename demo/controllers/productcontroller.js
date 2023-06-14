@@ -38,27 +38,31 @@ const productController = {
     let buscar = req.query.search;        //esta bien la query
     
     producttos.findAll({
-        where: [{
-            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
-            order:[['created_at', 'ASC'] ]
-        }]
+//        where: [{
+//            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
+//            order:[['created_at', 'DESC'] ]
+//        }]
+        where: {
+            [op.or]: [
+                {nombre_producto: {[op.like]: "%" + buscar + "%"}},
+                //{order:[['created_at', 'DESC'] ]}
+            
+            ]
+        }
     })
         .then(function(result){
-            if (result.length > 0){
-                return res.render('sResults',{productos: result});
-            } 
-            else {
-                return res.send("No encontramos resultados a su busqueda")
-            } 
+            //return res.send(result)
+            return res.render('sResults',{productos: result});
         })
         .catch(function(error){
                 console.log(error)
         });
         },
+        
     
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addProduct')//esta bien el sufijo?
+        return res.render('addproduct')//esta bien el sufijo?
     },
     
     store: function (req,res){
@@ -67,11 +71,13 @@ const productController = {
             nombre_producto:info.nombre,
             descripcion_producto:info.descripcion,
             precio:info.precio,
+            imagen_producto: info.imagen_producto,
+            id_usuario: req.session.user.id
         }
         //console.log(info);
         producttos.create(productoSave)
         .then((result) => {
-            return res.redirect("/")
+            return res.redirect("/usuario/perfil/"+ req.session.user.id_usuario)
         }).catch((error) => {
             return console.log(error);
         });
@@ -81,9 +87,9 @@ const productController = {
     update: function(req,res){
         producttos
     }
-
-
+    
 };
+
 
 module.exports = productController;
 

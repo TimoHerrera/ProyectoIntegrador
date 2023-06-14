@@ -10,11 +10,11 @@
         <h2 class="col-12"> </h2>
 			<div class="container products-wrapper">
 				<div class="row">
-                
-                <% for (let i = 0; i < 5; i++) { %>
+                <% if (productos.length>0) { %>
+                <% for (let i = 0; i<productos.length; i++) { %>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <section class="product-box">
-                        <a href="/productos/prodDetail/<%= productos[i].id %>"> 
+                        <a href="/productos/prodDetail/<%= productos[i].id_producto %>"> 
 
                             <figure class="product-box_image">
                                 <img src=<%= productos[i].imagen_producto %> alt="productimage">
@@ -29,6 +29,10 @@
                     </section>
                 </div>
                 <% } %>
+                <% } else {%>
+					<h2>No hay resultados para su criterio de búsqueda</h2>
+					<% } %>
+                
             </div>
         </div>
 
