@@ -118,11 +118,12 @@ const UsuarioController = {
                 id: result.id_usuario,
                 nombre:result.nombre,
                 email:result.email,
-                pssword:result.pssword,
+                password:result.pssword,
                 fecha_nacimiento:result.fecha,
                 dni:result.dni,
                 created_at:result.created_at,
             }
+            
         return res.render('usuario', {infoUser: infoUser})
         })
      .catch((err) => {
