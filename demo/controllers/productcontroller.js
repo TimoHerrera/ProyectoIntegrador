@@ -74,7 +74,9 @@ const productController = {
         });
         //return res.redirect("/")
     }
+    
 };
+
 
 module.exports = productController;
 
