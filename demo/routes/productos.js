@@ -22,9 +22,11 @@ router.get('/sResults.ejs', productController.Sresultado);// el sufijo esta bien
 router.get('/addProduct', productController.showForm) //el sufijo es el de la pagina donde me permite agregar un prod
 //guardar el form de movie
 
-router.post('/addProduct', productController.store)
+router.post('/addProduct', productController.store);
 
-router.post('/editProduct', productController.update)
+router.get('/editProduct', productController.showFormUpdate);
+
+router.post('/editProduct', productController.update);
 
 
 module.exports = router;

@@ -62,7 +62,7 @@ const productController = {
     
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addproduct')//esta bien el sufijo?
+        return res.render('addProduct')//esta bien el sufijo?
     },
     
     store: function (req,res){
@@ -84,9 +84,35 @@ const productController = {
         //return res.redirect("/")
     },
 
-    update: function(req,res){
+    showFormUpdate: (req, res) => {
+        let id = req.params.id;
         producttos
-    }
+          .findByPk(id)
+          .then((result) => {
+            console.log(result);
+            return res.render("editProduct", { producttos: result });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+
+      update: (req, res) => {
+        let id = req.params.id;
+        let info = req.body;
+        producttos
+          .update(info, {
+            where: [{ id: id }],
+          })
+          .then((result) => {
+            return res.redirect("/prodDetail/" + id);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+
+      
     
 };
 
