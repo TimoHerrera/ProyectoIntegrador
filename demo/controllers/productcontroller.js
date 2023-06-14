@@ -38,10 +38,17 @@ const productController = {
     let buscar = req.query.search;        //esta bien la query
     
     producttos.findAll({
-        where: [{
-            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
-            order:[['created_at', 'ASC'] ]
-        }]
+//        where: [{
+//            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
+//            order:[['created_at', 'DESC'] ]
+//        }]
+        where: {
+            [op.or]: [
+                {nombre_producto: {[op.like]: "%" + buscar + "%"}},
+                //order:[['created_at', 'DESC'] ]
+            
+            ]
+        }
     })
         .then(function(result){
             if (result.length > 0){
@@ -55,6 +62,7 @@ const productController = {
                 console.log(error)
         });
         },
+        
     
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
