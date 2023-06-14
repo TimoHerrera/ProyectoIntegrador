@@ -15,7 +15,8 @@ router.get('/', productController.findAll);//no es /productos puse/ index pq es 
 router.get('/prodDetail/:id', productController.show);
 
 //ejemplo de buscador
-router.get('/sResults', productController.Sresultado);// no se bien el sufijo
+router.get('/sResults.ejs', productController.Sresultado);// el sufijo esta bien, no se pq pone el ejs
+
 
 //mostrar form moivies (mostrar el form para que agregue una pelicula)
 router.get('/addProduct', productController.showForm) //el sufijo es el de la pagina donde me permite agregar un prod

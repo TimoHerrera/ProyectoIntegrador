@@ -25,15 +25,14 @@ const productController = {
     let id = req.params.id; //capturo el id a travez de la url
 
     // creo relaciones entre los productos y los usuarios que estarian en los productos
-
-    producttos.findByPk(id)
-    .then(function(result){
-        return res.render('prodDetail',{productos: result})
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-    },
+        producttos.findByPk(id)
+        .then(function(result){
+            return res.render('prodDetail',{productos: result})
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+        },
     
     Sresultado: function (req,res) {//BUSCADOR
     let buscar = req.query.search;        //esta bien la query
@@ -41,11 +40,16 @@ const productController = {
     producttos.findAll({
         where: [{
             nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
-            order:[['created_at', 'DESC'] ]
+            order:[['created_at', 'ASC'] ]
         }]
     })
         .then(function(result){
-            res.render('sResults',{productos: result})//bien 
+            if (result.length > 0){
+                return res.render('sResults',{productos: result});
+            } 
+            else {
+                return res.send("No encontramos resultados a su busqueda")
+            } 
         })
         .catch(function(error){
                 console.log(error)
