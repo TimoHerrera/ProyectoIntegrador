@@ -19,7 +19,7 @@ router.get('/sResults.ejs', productController.Sresultado);// el sufijo esta bien
 
 
 //mostrar form moivies (mostrar el form para que agregue una pelicula)
-router.get('/addProduct', productController.showForm) //el sufijo es el de la pagina donde me permite agregar un prod
+router.get('/addProduct', productController.showForm); //el sufijo es el de la pagina donde me permite agregar un prod
 //guardar el form de movie
 
 router.post('/addProduct', productController.store);
@@ -27,6 +27,9 @@ router.post('/addProduct', productController.store);
 router.get('/editProduct/:id', productController.showFormUpdate);
 
 router.post('/editProduct/:id', productController.update);
+
+router.post('/comentarios/:id' , productController.addcomentario);
+
 
 
 module.exports = router;

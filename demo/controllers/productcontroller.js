@@ -1,7 +1,10 @@
 
 const db = require('../database/models') //requiero mis modelos
-const producttos = db.Producto; //Producto es el alias de mi modelo
+const producttos = db.Producto; //Producto es el alias de mi tabla
+const commentarios = db.Comentario;
+
 let op = db.Sequelize.Op; 
+
 
 const productController = {
     findAll: (req, res) => {
@@ -38,10 +41,6 @@ const productController = {
     let buscar = req.query.search;        //esta bien la query
     
     producttos.findAll({
-//        where: [{
-//            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
-//            order:[['created_at', 'DESC'] ]
-//        }]
         where: {
             [op.or]: [
                 {nombre_producto: {[op.like]: "%" + buscar + "%"}},
@@ -62,7 +61,7 @@ const productController = {
     
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addProduct')//esta bien el sufijo?
+        return res.render('addproduct')
     },
     
     store: function (req,res){
@@ -72,7 +71,7 @@ const productController = {
             descripcion_producto:info.descripcion,
             precio:info.precio,
             imagen_producto: info.imagen_producto,
-            id_usuario: req.session.user.id
+            id_usuario: req.session.user.id_usuario
         }
         //console.log(info);
         producttos.create(productoSave)
@@ -113,42 +112,28 @@ const productController = {
       },
 
 //poner WHERE en el DELETE/DESTROY  
-    
+
+      addcomentario: function(req,res) {
+        let info = req.body;
+        let nuevocomentario = {
+            comentario: info.nuevocomentario,
+            id_usuario: req.session.user.id_usuario,
+            id_producto: req.params.id
+        }
+        commentarios.create(nuevocomentario)
+        .then(function(result){
+            return res.redirect("/productos/prodDetail/" + nuevocomentario.id_producto)
+        }).catch((error) => {
+            return console.log(error);
+        });
+    },
+
 };
+
+    
+    
+
 
 
 module.exports = productController;
 
-//where para consultas especiales (por ahora no lo voy a agregar hasta que nos den la consigna)
-//order y limit tambien se pueden usar
-
-
-
-
-
-//const data = require("../db/modulo");
-// const productController= {
-
-//     detail: function(req, res){
-//        let id = req.params.id;
-//        let resultado = null;
-//        for (let i = 0; i < data.productos.length; i++) {     
-//         if (id == data.productos[i].id) {
-//             resultado = data.productos[i]
-            
-//         }
-//        }
-//        return res.render("prodDetail",{productos:resultado, usuario:data.usuario, comentarios:data.comentarios})
-//     },
-    
-//     add: function(req, res){
-//         return res.render("addProduct", {usuario:data.usuario})
-//     },
-
-//     busqueda: function (req, res) {
-//         return res.render("sResults", {productos:data.productos, usuario:data.usuario});
-//       },
-
-// }
-
-//module.exports = productController
