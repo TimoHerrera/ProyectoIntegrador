@@ -27,8 +27,23 @@
 		</div>      
 		<section class="addComm">
 			<form class="form" action="" method="POST">
+				<section class="form-input" id="">
+				<article id="">
+				<% if (locals.user != undefined) { %>
+				<p class="user">
+				<strong>
+				<a href="/usuario/perfil/:id" ><%=user.nombre%></a>
+				</strong>
+				<a href="" class="comments"></a>
+				</p>
 				<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 				<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+				<% }else {%>
+				<input class="form-input" type="text" value="" placeholder="Loguearse para comentar">
+				<a href="/usuario/login" class="buy-now-button">AGREGAR COMENTARIO</button>	
+				</article>	
+				</section>
+				<% } %>
 			</form>
 		</section>
 	</div>

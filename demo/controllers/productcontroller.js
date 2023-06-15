@@ -1,6 +1,7 @@
 
 const db = require('../database/models') //requiero mis modelos
 const producttos = db.Producto; //Producto es el alias de mi tabla
+const commentarios = db.Comentario;
 
 let op = db.Sequelize.Op; 
 
@@ -40,10 +41,6 @@ const productController = {
     let buscar = req.query.search;        //esta bien la query
     
     producttos.findAll({
-//        where: [{
-//            nombre_producto:{[op.like]:"%" + buscar + "%"},//si hay error esta en la vista, porque aca esta todo bien
-//            order:[['created_at', 'DESC'] ]
-//        }]
         where: {
             [op.or]: [
                 {nombre_producto: {[op.like]: "%" + buscar + "%"}},
@@ -64,7 +61,7 @@ const productController = {
     
     //esto ya es de franco, solo estan creadas las rutas, igual chequealo francoo!!
     showForm: function(req,res){
-        return res.render('addproduct')//esta bien el sufijo?
+        return res.render('addproduct')
     },
     
     store: function (req,res){
@@ -84,6 +81,25 @@ const productController = {
             return console.log(error);
         });
     },
+
+    addcomentario: function(req,res){
+        let info = req.body;
+        let nuevocomentario = {
+            comentario: info.nuevocomentario,
+            id_usuario: req.session.user.id,
+            id_producto: req.params.id,
+            created_at: new DATE(),
+        }
+        commentarios.create(nuevocomentario)
+        .then(function(result){
+            return res.redirect("/productos/prodDetail/" + nuevocomentario.id_producto)
+        }).catch((error) => {
+            return console.log(error);
+        });
+    }
+
+
+
     
     
 };
