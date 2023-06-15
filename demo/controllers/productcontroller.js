@@ -1,6 +1,6 @@
 
 const db = require('../database/models') //requiero mis modelos
-const producttos = db.Producto; //Producto es el alias de mi tabla
+const producttos = db.Producto; //Producto es el alias de mi modelo
 let op = db.Sequelize.Op; 
 
 const productController = {
@@ -86,15 +86,15 @@ const productController = {
 
     showFormUpdate: (req, res) => {
         let id = req.params.id;
-        producttos
+         producttos
           .findByPk(id)
           .then((result) => {
-            console.log(result);
-            return res.render("editProduct", { producttos: result });
+           // console.log(result);
+            return res.render("editProduct", { productos: result });
           })
           .catch((err) => {
             console.log(err);
-          });
+          });  
       },
 
       update: (req, res) => {
@@ -112,7 +112,7 @@ const productController = {
           });
       },
 
-      
+//poner WHERE en el DELETE/DESTROY  
     
 };
 

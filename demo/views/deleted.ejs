@@ -1,0 +1,15 @@
+<%-include('./partials/head') %>        
+        
+<% if (locals.user != undefined) { %>
+  <%- include('./partials/headerLogeado')  %> 
+<% }else {%>
+  <%- include('./partials/Header')  %> 
+<% } %> 
+
+<div>
+    <p>El producto ha sido eliminado</p>
+</div>
+
+
+	
+<%-include('./partials/footer') %>

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const productController = require('../controllers/productcontroller');
+const productController = require('../controllers/productController');
 // const productController = require(`../controllers/productcontroller`);
 
 // router.get (`/`,productcontroller.index);
@@ -24,9 +24,9 @@ router.get('/addProduct', productController.showForm) //el sufijo es el de la pa
 
 router.post('/addProduct', productController.store);
 
-router.get('/editProduct', productController.showFormUpdate);
+router.get('/editProduct/:id', productController.showFormUpdate);
 
-router.post('/editProduct', productController.update);
+router.post('/editProduct/:id', productController.update);
 
 
 module.exports = router;
