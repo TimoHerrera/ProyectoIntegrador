@@ -71,7 +71,7 @@ const productController = {
             descripcion_producto:info.descripcion,
             precio:info.precio,
             imagen_producto: info.imagen_producto,
-            id_usuario: req.session.user.id
+            id_usuario: req.session.user.id_usuario
         }
         //console.log(info);
         producttos.create(productoSave)
@@ -86,9 +86,8 @@ const productController = {
         let info = req.body;
         let nuevocomentario = {
             comentario: info.nuevocomentario,
-            id_usuario: req.session.user.id,
-            id_producto: req.params.id,
-            created_at: new DATE(),
+            id_usuario: req.session.user.id_usuario,
+            id_producto: req.params.id
         }
         commentarios.create(nuevocomentario)
         .then(function(result){
@@ -107,36 +106,3 @@ const productController = {
 
 module.exports = productController;
 
-//where para consultas especiales (por ahora no lo voy a agregar hasta que nos den la consigna)
-//order y limit tambien se pueden usar
-
-
-
-
-
-//const data = require("../db/modulo");
-// const productController= {
-
-//     detail: function(req, res){
-//        let id = req.params.id;
-//        let resultado = null;
-//        for (let i = 0; i < data.productos.length; i++) {     
-//         if (id == data.productos[i].id) {
-//             resultado = data.productos[i]
-            
-//         }
-//        }
-//        return res.render("prodDetail",{productos:resultado, usuario:data.usuario, comentarios:data.comentarios})
-//     },
-    
-//     add: function(req, res){
-//         return res.render("addProduct", {usuario:data.usuario})
-//     },
-
-//     busqueda: function (req, res) {
-//         return res.render("sResults", {productos:data.productos, usuario:data.usuario});
-//       },
-
-// }
-
-//module.exports = productController

@@ -24,7 +24,7 @@ router.get('/addProduct', productController.showForm); //el sufijo es el de la p
 
 router.post('/addProduct', productController.store);
 
-router.post('/prodDetail/:id',productController.addcomentario);
+router.post('/comentarios/:id' , productController.addcomentario);
 
 
 
