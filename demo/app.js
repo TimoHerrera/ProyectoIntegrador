@@ -66,6 +66,7 @@ app.use(function(req,res,next){
 app.use('/', productsRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
+//app.use('/comentarios', comentarioRouter);
 
 
 

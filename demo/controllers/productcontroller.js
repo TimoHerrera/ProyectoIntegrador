@@ -1,7 +1,9 @@
 
 const db = require('../database/models') //requiero mis modelos
 const producttos = db.Producto; //Producto es el alias de mi tabla
+
 let op = db.Sequelize.Op; 
+
 
 const productController = {
     findAll: (req, res) => {
@@ -81,8 +83,8 @@ const productController = {
         }).catch((error) => {
             return console.log(error);
         });
-        //return res.redirect("/")
-    }
+    },
+    
     
 };
 

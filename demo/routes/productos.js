@@ -25,4 +25,5 @@ router.get('/addProduct', productController.showForm) //el sufijo es el de la pa
 router.post('/addProduct', productController.store)
 
 
+
 module.exports = router;
