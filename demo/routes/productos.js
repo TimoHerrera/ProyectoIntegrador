@@ -28,7 +28,7 @@ router.get('/editProduct/:id', productController.showFormUpdate);
 
 router.post('/editProduct/:id', productController.update);
 
-router.post('/comentarios/:id' , productController.addcomentario);
+router.post('/comentarios/:id' , productController.addComentario);
 
 
 

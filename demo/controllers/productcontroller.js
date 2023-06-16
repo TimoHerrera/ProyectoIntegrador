@@ -132,13 +132,13 @@ const productController = {
         let productoUpdate = {
             nombre_producto:info.nombre,
             descripcion_producto:info.descripcion,
-            precio:info.precio,
             imagen_producto: info.imagen_producto,
-            id_usuario: req.session.user.id_usuario
+            precio:info.precio,
+            
         }
         producttos
           .update(productoUpdate, {
-            where: [{ id: id }],
+            where: [{ id_producto: id }],
           })
           .then((result) => {
             return res.redirect("/prodDetail/" + id);
@@ -150,7 +150,7 @@ const productController = {
 
 //poner WHERE en el DELETE/DESTROY  
 
-      addcomentario: function(req,res) {
+      addComentario: function(req,res) {
         let info = req.body;
         let nuevocomentario = {
             comentario: info.nuevocomentario,
