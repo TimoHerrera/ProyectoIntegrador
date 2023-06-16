@@ -42,7 +42,7 @@
 						
 						<div class="data">
 							<p class="user">
-							<img <%=productos.comentarios[i].imagen_usuario%> alt="">
+							<a href="/usuario/perfil/<%= productos.comentarios[i].id_usuario%>" ><img  <%=productos.comentarios[i].imagen_usuario%> alt=""></a>
 							<p><%=productos.comentarios[i].comentario%></p>
 					</article>
 					<%	}%>

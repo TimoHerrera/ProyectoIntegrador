@@ -48,8 +48,8 @@ const productController = {
     // creo relaciones entre los productos y los usuarios que estarian en los productos
         producttos.findByPk(id, rel)
         .then(function(result){
-             /* return res.send(result) */
-             return res.render('prodDetail',{productos: result})
+            /*   return res.send(result)   */
+              return res.render('prodDetail',{productos: result}) 
         })
         .catch(function(error){
             console.log(error);
