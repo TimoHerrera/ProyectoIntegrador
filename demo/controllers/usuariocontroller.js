@@ -53,10 +53,8 @@ const UsuarioController = {
             return res.render('login')
          };
          },*/
-         let errors = {}; // Create an empty errors object or populate it with relevant error messages if needed
-  // Pass the errors object to the "login" view
+         let errors = {};   
         return res.render("login", { errors: errors });
-     //   return res.render('login')
     },
     loginPost: function (req, res) {
         let emailBuscado = req.body.email
