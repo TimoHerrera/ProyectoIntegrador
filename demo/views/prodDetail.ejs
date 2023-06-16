@@ -25,39 +25,38 @@
 				<%# } %> 
 		</div>
 
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%=productos.imagen_producto %>" alt="">
-					<p class="product-detail-description">
-						<%=productos.descripcion_producto%>
-					</p>
-				</article>
-			</div>		
-		</div>      
-		<section class="addComm">
-			<form class="form" action="/productos/comentarios/<%= productos.id_producto %>"  method="POST">
-				<input name= "nuevocomentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
-				<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-<!-- 				<section class="form-input" id="">
-				<article id="">
-				<% //if (locals.user != undefined) { %>
-				<p class="user">
-				<strong>
-				<a href="/usuario/perfil/:id" ><%=//user.nombre%></a>
-				</strong>
-				<a href="" class="comments"></a>
-				</p>
-				<input name= "nuevocomentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
-				<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-				<%// }else {%>
-				<input name= "nuevocomentario" class="form-input" type="text" value="" placeholder="Loguearse para comentar">
-				<a href="/usuario/login" class="buy-now-button">AGREGAR COMENTARIO</button>	
-				</article>	
+	<div class="product-detail">
+		<div class="row">
+					<article class="col-12 col-lg-8 product-detail-info">
+						<img src="<%=productos.imagen_producto %>" alt="">
+						<p class="product-detail-description">
+							<%=productos.descripcion_producto%>
+						</p>
+					</article>
+				<!-- </div>		
+			</div>     -->
+			<div class="col-12 col-lg-4">
+				<section class="comments">
+				<% for( let i = 0; i < 5 i++ ) { %>
+					<article>
+						<img src="https://via.placeholder.com/35" alt="">
+						<div class="data">
+							<p class="user">
+							<strong> <a href="profile.html"></a> </strong>
+							Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
+						</div>
+					</article>
+					<% } %>
 				</section>
-				<% //} %> -->
-			</form>
-		</section>
+
+					<section class="addComm">
+						<form class="form" action="/productos/comentarios/<%= productos.id_producto %>"  method="POST">
+							<input name= "nuevocomentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+					</section>
+			</div>
+		</div>
 	</div>
 <%-include('./partials/footer') %>
 					
