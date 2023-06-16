@@ -45,7 +45,18 @@ const UsuarioController = {
     },
 
     login: function (req, res) {
-        return res.render('login')
+// no usamos el if dado que nos pareció más práctico simplemente mostrar el login solo en caso de que la view incluya el "headerLogeado".
+
+     /* if (req.session.user != undefined ){
+            return res.redirect("/")
+        } else { 
+            return res.render('login')
+         };
+         },*/
+         let errors = {}; // Create an empty errors object or populate it with relevant error messages if needed
+  // Pass the errors object to the "login" view
+        return res.render("login", { errors: errors });
+     //   return res.render('login')
     },
     loginPost: function (req, res) {
         let emailBuscado = req.body.email

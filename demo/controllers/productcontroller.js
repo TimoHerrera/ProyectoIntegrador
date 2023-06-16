@@ -88,7 +88,9 @@ const productController = {
 
     showFormUpdate: (req, res) => {
         let id = req.params.id;
-    
+        let errors = {};
+
+        if (req.session.user != undefined ){
          producttos
           .findByPk(id)
           .then((result) => {
@@ -98,7 +100,11 @@ const productController = {
           .catch((err) => {
             console.log(err);
           });  
-      },
+      } else {
+        errors.message = "Inicia sesión para editar producto";
+        res.locals.errors = errors;
+        return res.render("login", { errors: errors });
+      }},
 
       update: (req, res) => {
         let id = req.params.id;
@@ -111,8 +117,8 @@ const productController = {
             id_usuario: req.session.user.id_usuario
         }
         producttos
-          .update(info, {
-            where: [{ id_producto: id }],
+          .update(productoUpdate, {
+            where: [{ id: id }],
           })
           .then((result) => {
             return res.redirect("/prodDetail/" + id);
