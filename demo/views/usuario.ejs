@@ -5,6 +5,7 @@
   <% }else {%>
     <%- include('./partials/Header')  %> 
   <% } %> 
+  <p>ESTE ES EL ID: <%console.log(locals.user.id_usuario)%></p>
 
         <section class="info-usuario container products-wrapper">
             <div class="row">
@@ -15,7 +16,7 @@
                     <div class="d-flex align-items-center ">
                         <img src="<%= infoUser.imagen_usuario%>" class="foto-perfil" alt="">
                         <h1 class="main-title"><%= infoUser.nombre%>
-                            <a href="/usuario/usuario-edit">
+                            <a href="/usuario/editUsuario">
                                 <i class="fas fa-cog"></i>
                             </a>
                         </h1>

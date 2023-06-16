@@ -1,26 +1,28 @@
 var express = require('express');
 var router = express.Router();
-const UsuarioController = require(`../controllers/usuarioController`);
+const usuarioController = require(`../controllers/usuarioController`);
 
 /* router.get (`/`,usuarioController.index);
 router.get (`/login`,usuarioController.login);
 router.get (`/register`,usuarioController.register);
 router.get (`/usuario-edit`, usuarioController.edit); */
 //lo nuevo
-router.get('/all', UsuarioController.findAll);// no hay una vista dedicada a todos los users, capaz hay que hacer find by pk para uno individualmente
+router.get('/all', usuarioController.findAll);// no hay una vista dedicada a todos los users, capaz hay que hacer find by pk para uno individualmente
 
-router.get('/register', UsuarioController.create );
+router.get('/register', usuarioController.create);
 
-router.post('/register', UsuarioController.store);
+router.post('/register', usuarioController.store);
 
-router.get('/login', UsuarioController.login );
+router.get('/login', usuarioController.login );
 
-router.post('/login', UsuarioController.loginPost);
+router.post('/login', usuarioController.loginPost);
 
-router.get('/logout', UsuarioController.logout);
+router.get('/logout', usuarioController.logout);
 
 // Usuario sigue sin funcionar
-router.get('/perfil/:id', UsuarioController.profile);
+router.get('/perfil/:id', usuarioController.profile);
+
+router.get('/editUsuario', usuarioController.show);
 
 
 module.exports=router;

@@ -6,7 +6,7 @@ let op = db.Sequelize.Op; //EL op se puede usar para buscar un usuario en especi
 const bcrypt = require('bcryptjs');
 
 
-const UsuarioController = {
+const usuarioController = {
     findAll: (req, res) => {
 
         ussuarios.findAll()//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
@@ -20,9 +20,10 @@ const UsuarioController = {
     create: function (req, res) {
         return res.render('register')
     },
+
     store: function (req, res) {
         let info = req.body;
-
+        
         let ussuarioSave = {
             nombre: info.usuarioNombre,// lo de la izquierda es el nombre de la tabla y la derecha el nombre del form de register
             email: info.email,
@@ -42,7 +43,8 @@ const UsuarioController = {
                 console.log(error);
             });
 
-    },
+    }, 
+
 
     login: function (req, res) {
 // no usamos el if dado que nos pareció más práctico simplemente mostrar el login solo en caso de que la view incluya el "headerLogeado".
@@ -110,6 +112,10 @@ const UsuarioController = {
         
     },
 
+    show: function(req,res) {
+        return res.render("editUsuario")
+    },
+
     profile: function (req,res) {
     let idSolicitado= req.params.id 
     let relations = {
@@ -138,5 +144,5 @@ const UsuarioController = {
         });
     }, //cierra el profile en general
 };
-module.exports = UsuarioController;
+module.exports = usuarioController;
 

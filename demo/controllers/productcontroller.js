@@ -36,13 +36,12 @@ const productController = {
     let rel = {
         include: [
             {association:"usuarios"},
-                {
-                    association:"comentarios",
+            {association:"comentarios",
 
                 include:[
-        {association: "Productos"},
-        {association: "Usuario"}
-                ]
+                    {association: "Productos"},
+                    {association: "Usuario"}
+                            ]
             }
     ]}
     // creo relaciones entre los productos y los usuarios que estarian en los productos
