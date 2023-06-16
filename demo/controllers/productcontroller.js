@@ -114,11 +114,11 @@ const productController = {
             descripcion_producto:info.descripcion,
             precio:info.precio,
             imagen_producto: info.imagen_producto,
-            id_usuario: req.session.user.id_usuario
+            
         }
         producttos
           .update(productoUpdate, {
-            where: [{ id: id }],
+            where: [{ id_producto: id }],
           })
           .then((result) => {
             return res.redirect("/prodDetail/" + id);
