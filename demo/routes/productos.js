@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const productController = require('../controllers/productcontroller');
+const productController = require('../controllers/productController');
 // const productController = require(`../controllers/productcontroller`);
 
 // router.get (`/`,productcontroller.index);
@@ -23,6 +23,10 @@ router.get('/addProduct', productController.showForm); //el sufijo es el de la p
 //guardar el form de movie
 
 router.post('/addProduct', productController.store);
+
+router.get('/editProduct/:id', productController.showFormUpdate);
+
+router.post('/editProduct/:id', productController.update);
 
 router.post('/comentarios/:id' , productController.addcomentario);
 

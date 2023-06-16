@@ -26,7 +26,7 @@ const productController = {
     
     show: function (req,res) {//voy a filtrar por pk
     let id = req.params.id; //capturo el id a travez de la url
-
+   
     // creo relaciones entre los productos y los usuarios que estarian en los productos
         producttos.findByPk(id)
         .then(function(result){
@@ -80,9 +80,57 @@ const productController = {
         }).catch((error) => {
             return console.log(error);
         });
+        //return res.redirect("/") 
+
     },
 
-    addcomentario: function(req,res){
+ 
+
+    showFormUpdate: (req, res) => {
+        let id = req.params.id;
+        let errors = {};
+
+        if (req.session.user != undefined ){
+         producttos
+          .findByPk(id)
+          .then((result) => {
+           // console.log(result);
+            return res.render("editProduct", { productos: result });
+          })
+          .catch((err) => {
+            console.log(err);
+          });  
+      } else {
+        errors.message = "Inicia sesión para editar producto";
+        res.locals.errors = errors;
+        return res.render("login", { errors: errors });
+      }},
+
+      update: (req, res) => {
+        let id = req.params.id;
+        let info = req.body;
+        let productoUpdate = {
+            nombre_producto:info.nombre,
+            descripcion_producto:info.descripcion,
+            precio:info.precio,
+            imagen_producto: info.imagen_producto,
+            id_usuario: req.session.user.id_usuario
+        }
+        producttos
+          .update(productoUpdate, {
+            where: [{ id: id }],
+          })
+          .then((result) => {
+            return res.redirect("/prodDetail/" + id);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+
+//poner WHERE en el DELETE/DESTROY  
+
+      addcomentario: function(req,res) {
         let info = req.body;
         let nuevocomentario = {
             comentario: info.nuevocomentario,
@@ -95,13 +143,13 @@ const productController = {
         }).catch((error) => {
             return console.log(error);
         });
-    }
+    },
 
-
-
-    
-    
 };
+
+    
+    
+
 
 
 module.exports = productController;

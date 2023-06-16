@@ -28,7 +28,8 @@ const UsuarioController = {
             email: info.email,
             pssword: bcrypt.hashSync(info.pssword, 10),
             fecha: info.fecha_nacimiento,
-            dni: info.documento
+            dni: info.documento,
+            imagen_usuario:info.imagen_usuario,
 
         }
         console.log(ussuarioSave);
@@ -44,7 +45,16 @@ const UsuarioController = {
     },
 
     login: function (req, res) {
-        return res.render('login')
+// no usamos el if dado que nos pareció más práctico simplemente mostrar el login solo en caso de que la view incluya el "headerLogeado".
+
+     /* if (req.session.user != undefined ){
+            return res.redirect("/")
+        } else { 
+            return res.render('login')
+         };
+         },*/
+         let errors = {};   
+        return res.render("login", { errors: errors });
     },
     loginPost: function (req, res) {
         let emailBuscado = req.body.email

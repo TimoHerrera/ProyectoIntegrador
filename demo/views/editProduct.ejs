@@ -11,10 +11,10 @@
             <div class="container products-wrapper">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="products-title">Agregar productos</h2>
+                        <h2 class="products-title">Editar producto</h2>
                     </div>
         
-                             <form method="POST" action="/productos/addProduct">
+                             <form method="POST" action="/productos/editProduct/<%= productos.id_producto %>">
                                 
                                 
                                 <label class="form-label">Nombre</label>
@@ -32,13 +32,13 @@
         
                                 
                                 <label class="form-label">Imagén</label>
-                                <input type="text" name="imagen_producto" class="form-input">
+                                <input type="text" name="imagen" class="form-input">
 
                                 <label class="form-label">Fecha</label>
                                 <input type="date" name="fecha" class="form-input">
                             
                                 
-                                <button type="submit" class="form-input">Agregar producto</button>
+                                <button type="submit" class="form-input">Guardar cambios</button>
                             </form>
                     <!-- Show the "ultimos" products -->
                     <h2 class="col-12"> </h2>

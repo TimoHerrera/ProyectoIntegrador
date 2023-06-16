@@ -13,6 +13,7 @@
                 </div>
                 <div class="data-container col-6">
                     <div class="d-flex align-items-center ">
+                        <img src="<%= infoUser.imagen_usuario%>" class="foto-perfil" alt="">
                         <h1 class="main-title"><%= infoUser.nombre%>
                             <a href="/usuario/usuario-edit">
                                 <i class="fas fa-cog"></i>
@@ -42,12 +43,12 @@
                     <section class="product-box">
                             <a href="/productos/prodDetail/<%= infoUser.Producto[i].id %>"></a>
                             <figure class="product-box_image">
-                                <img src=<%= infoUser.Producto[i].imagen_producto %> alt="productimage">
+                                <a href="/productos/prodDetail/<%= infoUser.Producto[i].id_producto %>"><img src=<%= infoUser.Producto[i].imagen_producto %> alt="productimage"></a>
                             </figure>
                             <article class="product-box_data">
                                 <h2><%= infoUser.Producto[i].nombre_producto%></h2>
                                 <p> <%= infoUser.Producto[i].descripcion_producto%></p>
-                                <p>12 Comentarios</p>
+                                
                         </a>
                     </section>
                 </div>
