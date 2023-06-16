@@ -28,7 +28,8 @@ const UsuarioController = {
             email: info.email,
             pssword: bcrypt.hashSync(info.pssword, 10),
             fecha: info.fecha_nacimiento,
-            dni: info.documento
+            dni: info.documento,
+            imagen_usuario:info.imagen_usuario,
 
         }
         console.log(ussuarioSave);
