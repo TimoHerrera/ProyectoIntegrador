@@ -1,6 +1,10 @@
-<%-include('./partials/head') %> 
-	
-<%-include('./partials/header') %>
+<%-include('./partials/head') %>        
+        
+<% if (locals.user != undefined) { %>
+  <%- include('./partials/headerLogeado')  %> 
+<% }else {%>
+  <%- include('./partials/Header')  %> 
+<% } %> 
     
 <div class="container products-wrapper">
     <div class="row">

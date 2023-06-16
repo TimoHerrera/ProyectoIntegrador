@@ -63,10 +63,11 @@ const productController = {
         where: {
             [op.or]: [
                 {nombre_producto: {[op.like]: "%" + buscar + "%"}},
-                //{order:[['created_at', 'DESC'] ]}
+                {descripcion_producto:{[op.like]: "%" + buscar + "%"}},
             
             ]
-        }
+        },
+        order:[['created_at', 'DESC'] ]
     })
         .then(function(result){
             //return res.send(result)

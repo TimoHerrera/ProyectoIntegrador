@@ -49,8 +49,8 @@ app.use(function(req,res,next){
     db.Usuario.findByPk(idUsuarioEnCookie)
     .then(function (result) {
       
-    req.session.user = result.dataValues;
-    res.locals.user = result.dataValues;
+    req.session.user = result;
+    res.locals.user = result;
     return next();
   
   }).catch(function (err){
@@ -66,7 +66,7 @@ app.use(function(req,res,next){
 app.use('/', productsRouter);
 app.use('/productos', productsRouter); //lo conecto con producstouter
 app.use('/usuario', usuarioRouter);//lo conecto a usuariorouter
-//app.use('/comentarios', comentarioRouter);
+//app.use('/comentar', comentarioRouter);
 
 
 
