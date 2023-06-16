@@ -69,8 +69,6 @@ const UsuarioController = {
 
                 if (result != undefined) {
                     let pass = req.body.pssword;
-                    // console.log(result.pssword);
-                    // console.log(pass);
                     let clavecorrecta = bcrypt.compareSync(pass, result.pssword)
 
                 if (result != null) {

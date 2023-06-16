@@ -11,14 +11,21 @@ const productController = {
 
         let rel = {
             include: [
-            {association: "usuarios"},
-            {association: "comentarios"}
+                {association:"usuarios"},
+                    {
+                        association:"comentarios",
+
+                    include:[
+            {association: "Productos"},
+            {association: "Usuario"}
+                    ]
+                }
         ]}
 
         producttos.findAll(rel)//busca todos los productos porque como parametro no le paso nada especifico (le puse doble t porque en views ya hay un productos)
         .then(function (result) {//va a buscar a mi deb todos los registros y lo guardav en result
-            //return res.send(result)
-            return res.render("index", {productos: result}); //productos sale de la vista!
+            // return res.send(result)
+            return res.render("index", {productos: result}) ; //productos sale de la vista!
         }).catch(function (err){
             console.log(err);
         });
@@ -26,11 +33,23 @@ const productController = {
     
     show: function (req,res) {//voy a filtrar por pk
     let id = req.params.id; //capturo el id a travez de la url
-   
+    let rel = {
+        include: [
+            {association:"usuarios"},
+                {
+                    association:"comentarios",
+
+                include:[
+        {association: "Productos"},
+        {association: "Usuario"}
+                ]
+            }
+    ]}
     // creo relaciones entre los productos y los usuarios que estarian en los productos
-        producttos.findByPk(id)
+        producttos.findByPk(id, rel)
         .then(function(result){
-            return res.render('prodDetail',{productos: result})
+            /*   return res.send(result)   */
+              return res.render('prodDetail',{productos: result}) 
         })
         .catch(function(error){
             console.log(error);

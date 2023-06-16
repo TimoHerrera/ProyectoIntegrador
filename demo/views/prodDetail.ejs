@@ -58,10 +58,37 @@
 				<input name= "nuevocomentario" class="form-input" type="text" value="" placeholder="Loguearse para comentar">
 				<a href="/usuario/login" class="buy-now-button">AGREGAR COMENTARIO</button>	
 				</article>	
+	<div class="product-detail">
+		<div class="row">
+					<article class="col-12 col-lg-8 product-detail-info">
+						<img src="<%=productos.imagen_producto %>" alt="">
+						<p class="product-detail-description">
+							<%=productos.descripcion_producto%>
+						</p>
+					</article>
+				<!-</div>		
+			</div>     -->
+			<div class="col-12 col-lg-4">
+				<section class="comments">
+					<% for(let i = 1	; i <productos.comentarios.length; i++) { %>
+					<article>
+						
+						<div class="data">
+							<p class="user">
+							<a href="/usuario/perfil/<%= productos.comentarios[i].id_usuario%>" ><img  <%=productos.comentarios[i].imagen_usuario%> alt=""></a>
+							<p><%=productos.comentarios[i].comentario%></p>
+					</article>
+					<%	}%>
 				</section>
-				<% //} %> -->
-			</form>
-		</section>
+
+					<section class="addComm">
+						<form class="form" action="/productos/comentarios/<%= productos.id_producto %>"  method="POST">
+							<input name= "nuevocomentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+					</section>
+			</div>
+		</div>
 	</div>
 <%-include('./partials/footer') %>
 					
