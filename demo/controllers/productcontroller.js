@@ -80,11 +80,15 @@ const productController = {
         }).catch((error) => {
             return console.log(error);
         });
-        //return res.redirect("/")
+        //return res.redirect("/") 
+
     },
+
+ 
 
     showFormUpdate: (req, res) => {
         let id = req.params.id;
+    
          producttos
           .findByPk(id)
           .then((result) => {
@@ -99,9 +103,16 @@ const productController = {
       update: (req, res) => {
         let id = req.params.id;
         let info = req.body;
+        let productoUpdate = {
+            nombre_producto:info.nombre,
+            descripcion_producto:info.descripcion,
+            precio:info.precio,
+            imagen_producto: info.imagen_producto,
+            id_usuario: req.session.user.id_usuario
+        }
         producttos
           .update(info, {
-            where: [{ id: id }],
+            where: [{ id_producto: id }],
           })
           .then((result) => {
             return res.redirect("/prodDetail/" + id);
