@@ -80,11 +80,17 @@ const productController = {
         }).catch((error) => {
             return console.log(error);
         });
-        //return res.redirect("/")
+        //return res.redirect("/") 
+
     },
+
+ 
 
     showFormUpdate: (req, res) => {
         let id = req.params.id;
+        let errors = {};
+
+        if (req.session.user != undefined ){
          producttos
           .findByPk(id)
           .then((result) => {
@@ -94,13 +100,24 @@ const productController = {
           .catch((err) => {
             console.log(err);
           });  
-      },
+      } else {
+        errors.message = "Inicia sesión para editar producto";
+        res.locals.errors = errors;
+        return res.render("login", { errors: errors });
+      }},
 
       update: (req, res) => {
         let id = req.params.id;
         let info = req.body;
+        let productoUpdate = {
+            nombre_producto:info.nombre,
+            descripcion_producto:info.descripcion,
+            precio:info.precio,
+            imagen_producto: info.imagen_producto,
+            id_usuario: req.session.user.id_usuario
+        }
         producttos
-          .update(info, {
+          .update(productoUpdate, {
             where: [{ id: id }],
           })
           .then((result) => {

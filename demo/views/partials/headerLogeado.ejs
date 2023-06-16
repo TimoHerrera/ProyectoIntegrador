@@ -34,9 +34,30 @@
                         <% if (locals.user != undefined) { %>
                             <p><a href="/usuario/perfil/<%= locals.user.id_usuario %>">Bienvenido <%=locals.user.nombre%></a></p> 
                            <% } %>
-                         
-                           <a href="/usuario/logout"  type="submit">Cerrar Sesión <i class="fas fa-sign-in-alt"></i></a>
+    
                           
+                    </ul>
+        
+                    <ul class="right-navbar">
+
+                </nav>
+                <nav class="main-navbar">
+                    <ul class="left-navbar">
+                         
+                           <a href="/productos/addProduct/"  type="submit">Agregar Producto <i class="fas fa-sign-in-alt"></i></a>
+                          
+                    </ul>
+        
+                    <ul class="right-navbar">
+
+                </nav>
+                <nav class="main-navbar">
+                    <ul class="left-navbar">
+                        
+                        <% if (locals.user != undefined) { %>
+                            <% } %>
+                           <a href="/usuario/logout"  type="submit">Cerrar Sesión <i class="fas fa-sign-in-alt"></i></a>
+                        
                     </ul>
         
                     <ul class="right-navbar">
