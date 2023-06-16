@@ -30,6 +30,9 @@ module.exports = function(sequelize, dataTypes) {
         dni:{
             type: dataTypes.INTEGER,
         },
+        imagen_usuario:{
+            type: dataTypes.STRING,
+        },
         created_at:{
             type: dataTypes.DATE,
         },

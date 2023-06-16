@@ -54,10 +54,6 @@ img {
   width: 100%;
 }
 
-.comm {
-
-}
-
 .addComm {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -484,6 +480,8 @@ textarea.form-input {
 
 .foto-perfil{
   border-radius: 50%;
+  width: 5vw
+
 }
 
 .main-title{
