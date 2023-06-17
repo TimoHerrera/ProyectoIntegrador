@@ -22,7 +22,9 @@ router.get('/logout', usuarioController.logout);
 // Usuario sigue sin funcionar
 router.get('/perfil/:id', usuarioController.profile);
 
-router.get('/editUsuario', usuarioController.show);
+router.get('/editUsuario', usuarioController.showEditUser);
+
+router.post('/editUsuario', usuarioController.editUser);
 
 
 module.exports=router;

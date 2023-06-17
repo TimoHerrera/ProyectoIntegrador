@@ -45,6 +45,27 @@ const usuarioController = {
 
     }, 
 
+    editUser: function(req,res) {
+        let id = req.params.id;
+        let info = req.body;
+        let usuarioUpdate = {
+            nombre_producto:info.nombre,
+            descripcion_producto:info.descripcion,
+            imagen_producto: info.imagen_producto,
+            precio:info.precio,
+            
+        }
+        ussuarios
+          .editUser(usuarioUpdate, {
+            where: [{ id_usuario: id }],
+          })
+          .then((result) => {
+            return res.redirect("/perfil/" + id);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
 
     login: function (req, res) {
 // no usamos el if dado que nos pareció más práctico simplemente mostrar el login solo en caso de que la view incluya el "headerLogeado".
@@ -112,8 +133,9 @@ const usuarioController = {
         
     },
 
-    show: function(req,res) {
-        return res.render("editUsuario")
+    showEditUser: function(req,res) {
+        let id = req.params.id
+        return res.render("editUsuario", { usuarios: id });
     },
 
     profile: function (req,res) {
