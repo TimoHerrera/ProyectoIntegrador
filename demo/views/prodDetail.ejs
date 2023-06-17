@@ -11,8 +11,8 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= productos.nombre_producto %></h2> 
 			<p class="product-detail-description">
- 				<% if (locals.user != undefined && locals.user.id == productos.id_usuario) { %>
- 					<%# if (locals.user.id == productos.id_usuario) { %>
+ 				<% if (locals.user != undefined) { %>
+ 					<%# if (locals.user.id == product.user_id) { %>
 				<a  href="/productos/editProduct/<%= productos.id_producto %>">Editar</a>
 
 			</p>			
@@ -21,25 +21,20 @@
 					<input type="hidden" name="id" id="" value="<%= productos.id_producto %> ">
 					<button class="buy-now-button" id="deleteBtn" type="submit">Eliminar</button>
 				</form>
-					<% } %>
-				<%# } %> 
+					<%# } %>
+				<% } %> 
 		</div>
 
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%=productos.imagen_producto %>" alt="">
-					<p class="product-detail-description">
-						<%=productos.descripcion_producto%>
-					</p>
-					<p class="product-detail-price">
-						$ <%=productos.precio%>
-					</p>
-				</article>
-			</div>		
-		</div>      
-		
-
+	<div class="product-detail">
+		<div class="row">
+					<article class="col-12 col-lg-8 product-detail-info">
+						<img src="<%=productos.imagen_producto %>" alt="">
+						<p class="product-detail-description">
+							<%=productos.descripcion_producto%>
+						</p>
+					</article>
+				<!-- </div>		
+			</div>     -->
 			<div class="col-12 col-lg-4">
 				<section class="comments">
 					<% for(let i = 1	; i <productos.comentarios.length; i++) { %>
